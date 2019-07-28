@@ -1,5 +1,6 @@
 package com.fraz7.myapplication;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -87,16 +88,18 @@ public class busort extends AppCompatActivity {
         setContentView(R.layout.activity_busort);
 
         // tool bar
-        myToolbar = findViewById(R.id.tool_bar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //setSupportActionBar(myToolbar);
-        Bundle bundle = getIntent().getExtras();
+        myToolbar = findViewById(R.id.tool_bar);            // toolbar
+        myToolbar.setNavigationIcon(R.drawable.b);          // toolbar layout file
+        setSupportActionBar(myToolbar);                     // support toolbar as actionbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
+
+        Bundle bundle = getIntent().getExtras();   //  receving data from parent activity
+
         if( bundle != null)
         {
-            myToolbar.setTitle(bundle.getString("Tool_tile") );
+            myToolbar.setTitle(bundle.getString("Tool_tile") );             // setting title received from parent activity
         }
-
-
+        
         button = (Button) findViewById(R.id.button);
         butto2 = (Button) findViewById(R.id.button2);
         reset_bu = (Button) findViewById(R.id.reset_bu);
@@ -121,6 +124,7 @@ public class busort extends AppCompatActivity {
                 }
             } });
     }
+
     private void setInitialImage() {
         setCurrentImage();
     }
