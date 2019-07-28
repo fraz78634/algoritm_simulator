@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:background="@drawable/background"
+              android:layout_height="wrap_content">
+
+
+    <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/book"
+            android:id="@+id/imageView"
+            android:contentDescription="TODO"/>
+    <TextView
+
+            android:text="@string/baboon"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameView"
+            android:textSize="18sp"
+            android:textColor="@android:color/black" android:layout_marginStart="8dp"/>
+
+</LinearLayout>
