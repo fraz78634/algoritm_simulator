@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         listOfAnimalsView.adapter = adapter
 
     }
+
      class AnimalsAdapter:BaseAdapter {
 
             var listOfAnimals= ArrayList<Animal>()
@@ -72,31 +73,31 @@ class MainActivity : AppCompatActivity() {
                      if(position == 1)
                      {
                          val intent = Intent(context, busort::class.java)
-                         intent.putExtra("Tool_tile",animals.name!!)
+                       //  intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
                      }
                      if(position == 2)
                      {
-                         val intent = Intent(context, busort::class.java)
-                         intent.putExtra("Tool_tile",animals.name!!)
+                         val intent = Intent(context, insertionSort::class.java)
+                        // intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
                      }
-                     if(position == 3)
+               /*      if(position == 3)
                      {
                          val intent = Intent(context, busort::class.java)
-                         intent.putExtra("Tool_tile",animals.name!!)
+                        // intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
                      }
                      if(position == 4)
                      {
                          val intent = Intent(context, busort::class.java)
-                         intent.putExtra("Tool_tile",animals.name!!)
+                        // intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
-                     }
+                     } */
                      Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
                  }

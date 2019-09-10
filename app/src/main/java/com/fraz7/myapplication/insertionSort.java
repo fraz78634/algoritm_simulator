@@ -20,11 +20,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class busort extends AppCompatActivity {
+public class insertionSort extends AppCompatActivity {
     private static Button button, butto2, reset_bu;
     private static ImageView imageView;
     private static TextView textView;
     private int i = 0;
+    private Handler handler = new Handler();
     Toolbar myToolbar2;
     // image resource
 
@@ -93,9 +94,10 @@ public class busort extends AppCompatActivity {
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.b);
-        myToolbar2.setTitle("Bubble Sort");// toolbar layout file
+        myToolbar2.setTitle("Insertion Sort");// toolbar layout file
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
+
 
         button = (Button) findViewById(R.id.button);
         butto2 = (Button) findViewById(R.id.button2);
@@ -130,8 +132,7 @@ public class busort extends AppCompatActivity {
         }
         if (id == R.id.studdy)
         {
-            Intent i = new Intent(this, bubblesortStudy.class);
-            startActivity(i);
+            Toast.makeText(getApplicationContext(), "clicked",Toast.LENGTH_SHORT).show();
         }
         return true;
     }

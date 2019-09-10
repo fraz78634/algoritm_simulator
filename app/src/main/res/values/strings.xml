@@ -12,5 +12,8 @@
     <string name="pre">Pre</string>
     <string name="reset">Reset</string>
     <string name="Auto">Auto</string>
+    <string name="simulator">simulator</string>
+    <string name="study">study</string>
+    <string name="button">button</string>
 
 </resources>
