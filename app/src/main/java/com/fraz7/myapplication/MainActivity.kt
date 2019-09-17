@@ -2,17 +2,25 @@ package com.fraz7.myapplication
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.getColor
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ListView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.animal_tickt.view.*
+import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
+
 
     var listOfAnimals = ArrayList<Animal>()
     var adapter:AnimalsAdapter?=null
@@ -25,9 +33,27 @@ class MainActivity : AppCompatActivity() {
         listOfAnimals.add(Animal("Bubble Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Insertion Sort",R.drawable.book,false ))
         listOfAnimals.add(Animal("Heap Sort" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Merge Sort" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Selection Sort" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("List Search" ,0,true))
+        listOfAnimals.add(Animal("Linear Search" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Binary Search" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Jump Search",R.drawable.book,false ))
+        listOfAnimals.add(Animal("Interpolation Search" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Data Structure",0,true ))
+        listOfAnimals.add(Animal("Arrays" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Lists" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Stacks" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Queues" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Hash Tabels" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Heaps" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Binary Search Tree" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Zebra" ,0,true))
         listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Baboon",0,true ))
+        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Zebra" ,0,true))
         listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Baboon",0,true ))
         listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
@@ -36,8 +62,11 @@ class MainActivity : AppCompatActivity() {
         listOfAnimals.add(Animal("Zebra" ,0,true))
         listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
 
+
+
         setSupportActionBar(findViewById(R.id.tool_bar))
         val actionBar = supportActionBar
+
 
         adapter = AnimalsAdapter(this, listOfAnimals)
         listOfAnimalsView.adapter = adapter
@@ -48,7 +77,6 @@ class MainActivity : AppCompatActivity() {
 
             var listOfAnimals= ArrayList<Animal>()
             var context:Context?=null
-
             constructor(context:Context , listOfAnimals: ArrayList<Animal>):super(){
                  this.listOfAnimals = listOfAnimals
                 this.context = context
@@ -62,42 +90,53 @@ class MainActivity : AppCompatActivity() {
                  var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
                  var myView = inflator.inflate(R.layout.header_tickt, null)
                  myView.nameView.text = animals.name!!
+                 if (position == 0)
+                 {
+                    myView.nameView.setBackgroundColor(Color.parseColor("#488bd8"))
+                 }
+                 if (position == 5)
+                 {
+                     myView.nameView.setBackgroundColor(Color.parseColor("#09b693"))
+                 }
+                 if (position == 10)
+                 {
+                     myView.nameView.setBackgroundColor(Color.parseColor("#1ac260"))
+                 }
+                 if (position == 14)
+                 {
+                     myView.nameView.setBackgroundColor(Color.parseColor("#8db529"))
+                 }
+
+
                  return myView
              }
-             else{
+             else {
                  var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
                  var myView = inflator.inflate(R.layout.animal_tickt, null)
                  myView.nameView.text = animals.name!!
+                 myView.resources.getLayout(R.layout.animal_tickt)
                  myView.imageView.setImageResource(animals.imageview)
-                 myView.nameView.setOnClickListener {
-                     if(position == 1)
-                     {
+                 myView.setOnClickListener {
+                     if (position == 1) {
                          val intent = Intent(context, busort::class.java)
-                       //  intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
                      }
-                     if(position == 2)
-                     {
+                     if (position == 2) {
                          val intent = Intent(context, insertionSort::class.java)
-                        // intent.putExtra("Tool_tile",animals.name!!)
                          context!!.startActivity(intent)
 
                      }
-               /*      if(position == 3)
-                     {
-                         val intent = Intent(context, busort::class.java)
-                        // intent.putExtra("Tool_tile",animals.name!!)
+                     if (position == 3) {
+                         val intent = Intent(context, heapSort::class.java)
                          context!!.startActivity(intent)
 
                      }
-                     if(position == 4)
-                     {
-                         val intent = Intent(context, busort::class.java)
-                        // intent.putExtra("Tool_tile",animals.name!!)
+                     if (position == 4) {
+                         val intent = Intent(context, selectionSort::class.java)
                          context!!.startActivity(intent)
 
-                     } */
+                     }
                      Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
                  }
@@ -122,4 +161,7 @@ class MainActivity : AppCompatActivity() {
          }
 
      }
+
+
+
 }

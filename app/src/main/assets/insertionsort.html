@@ -1,0 +1,134 @@
+<html>
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    align:justify;
+   
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+</style>
+<h2>Insertion Sort Algorithm</h2>
+<p align="justify">Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. The analogy can be understood from the style we arrange a deck of cards. This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.</p>
+<h3 id="working" class="panel-heading tutorial-heading">Insertion Sort works as follows:</h3>
+<ol>
+<li>The first step involves the comparison of the element in question with its adjacent element.</li>
+<li>And if at every comparison reveals that the element in question can be inserted at a particular position, then space is created for it by shifting the other elements one position to the right and inserting the element at the suitable position.</li>
+<li>The above procedure is repeated until all the element in the array is at their apt position.</li>
+</ol>
+<p>Let us now understand working with the following example:</p>
+<p>Consider the following array: 25, 17, 31, 13, 2</p>
+<p><strong>First Iteration</strong>: Compare 25 with 17. The comparison shows 17&lt; 25. Hence swap 17 and 25.</p>
+<p>The array now looks like:</p>
+<p><strong>17, 25, 31, 13, 2</strong></p>
+<p><strong><img src="img/first+iteration.png" class="center" /></strong></p>
+<p><strong>Second Iteration</strong>: Begin with the second element (25), but it was already swapped on for the correct position, so we move ahead to the next element.</p>
+<p>Now hold on to the third element (31) and compare with the ones preceding it.</p>
+<p>Since 31&gt; 25, no swapping takes place.</p>
+<p>Also, 31&gt; 17, no swapping takes place and 31 remains at its position.</p>
+<p>The array after the Second iteration looks like:</p>
+<p><strong>17, 25, 31, 13, 2</strong></p>
+<p><strong><img src="img/second+iteration.png" class="center" /></strong></p>
+<p><strong>Third Iteration</strong>: Start the following Iteration with the fourth element (13), and compare it with its preceding elements.</p>
+<p>Since 13&lt; 31, we swap the two.</p>
+<p>Array now becomes: 17, 25, 13, 31, 2.</p>
+<p>But there still exist elements that we haven&rsquo;t yet compared with 13. Now the comparison takes place between 25 and 13. Since, 13 &lt; 25, we swap the two.</p>
+<p>The array becomes&nbsp;<strong>17, 13, 25, 31, 2</strong>.</p>
+<p>The last comparison for the iteration is now between 17 and 13. Since 13 &lt; 17, we swap the two.</p>
+<p>The array now becomes&nbsp;<strong>13, 17, 25, 31, 2</strong>.</p>
+<p><img src="img/third+iteration.png" class="center" /></p>
+<p><img src="img/working+of+insertion+sort.png" alt="insertion sort working"class="center" /></p>
+<p><strong>Fourth Iteration</strong>: The last iteration calls for the comparison of the last element (2), with all the preceding elements and make the appropriate swapping between elements.</p>
+<p>Since, 2&lt; 31. Swap 2 and 31.</p>
+<p>Array now becomes: 13, 17, 25, 2, 31.</p>
+<p>Compare 2 with 25, 17, 13.</p>
+<p>Since, 2&lt; 25. Swap 25 and 2.</p>
+<p><strong>13, 17, 2, 25, 31</strong>.</p>
+<p>Compare 2 with 17 and 13.</p>
+<p>Since, 2&lt;17. Swap 2 and 17.</p>
+<p>Array now becomes:</p>
+<p><strong>13, 2, 17, 25, 31</strong>.</p>
+<p>The last comparison for the Iteration is to compare 2 with 13.</p>
+<p>Since 2&lt; 13. Swap 2 and 13.</p>
+<p>The array now becomes:</p>
+<p><strong>2, 13, 17, 25, 31</strong>.</p>
+<p>This is the final array after all the corresponding iterations and swapping of elements.</p>
+<p>&nbsp;</p>
+<p>Fourth Iteration</p>
+<p><img src="img/insertion-sort.png" class="center" /></p>
+<h3 id="pseudocode" class="panel-heading tutorial-heading">Pseudocode</h3>
+<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
+    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"><code>INSERTION-SORT(A)
+   for i = 1 to n
+   	key &larr; A [i]
+    	j &larr; i &ndash; 1
+  	 while j &gt; = 0 and A[j] &gt; key
+   		A[j+1] &larr; A[j]
+   		j &larr; j &ndash; 1
+   	End while 
+   	A[j+1] &larr; key
+  End for
+  <br /></code></pre>
+<h3 id="examples" class="panel-heading tutorial-heading">Implementation:</h3>
+<p>Following is Java implementations of Insertion Sort.</p>
+<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
+    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"><code>// Java program for implementation of Insertion Sort
+public class InsertionSort
+{
+    /*Function to sort array using insertion sort*/
+    void sort(int arr[])
+    {
+        int n = arr.length;
+        for (int i=1; i&lt;n; ++i)
+        {
+            int key = arr[i];
+            int j = i-1;
+            
+            /* Move elements of arr[0..i-1], that are
+            greater than key, to one position ahead
+            of their current position */
+            while (j&gt;=0 &amp;&amp; arr[j] &gt; key)
+            {
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
+        }
+    }
+    /* A utility function to print array of size n*/
+    static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i&lt;n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+    // Driver method
+    public static void main(String args[])
+    {
+        int arr[] = {12, 11, 13, 5, 6};
+        InsertionSort ob = new InsertionSort();
+        ob.sort(arr);
+        printArray(arr);
+    }
+}<br /></code></pre>
+<h3 id="time-complexity" class="panel-heading tutorial-heading">Time Complexity Analysis:</h3>
+<p>Even though insertion sort is efficient, still, if we provide an already sorted array to the insertion sort algorithm, it will still execute the outer for loop, thereby requiring n steps to sort an already sorted array of n elements, which makes its best case time complexity a linear function of n.</p>
+<p>Wherein for an unsorted array, it takes for an element to compare with all the other elements which mean every n element compared with all other n elements. Thus, making it for n x n, i.e., n2 comparisons. One can also take a look at other sorting algorithms such as&nbsp;<em>Merge sort, Quick Sort, Selection Sort</em>, etc. and understand their complexities.</p>
+<p dir="ltr"><strong>Worst Case Time Complexity [ Big-O ]: O(n2)</strong></p>
+<p><strong>Best Case Time Complexity [Big-omega]: O(n)</strong></p>
+<p><strong>Average Time Complexity [Big-theta]: O(n2)</strong></p>
+
+</body>
+</html>

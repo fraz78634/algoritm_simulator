@@ -9,8 +9,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".bubblesortStudy"
-                  android:parentActivityName=".MainActivity" >
+        <activity android:name=".selectionsort_stdy">
+        </activity>
+        <activity android:name=".selectionSort">
+        </activity>
+        <activity android:name=".heapsort_stdy">
+        </activity>
+        <activity android:name=".heapSort">
+        </activity>
+        <activity android:name=".insertionsort_stdy">
+        </activity>
+        <activity
+                android:name=".bubblesortStudy"
+                android:parentActivityName=".MainActivity">
         </activity>
         <activity
                 android:name=".insertionSort"

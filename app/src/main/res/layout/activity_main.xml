@@ -8,10 +8,16 @@
         android:orientation="vertical"
         tools:context=".busort">
 
+
     <include layout="@layout/toolbar"
     android:id="@+id/tool_bar"/>
+
+
     <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/listview_row_design"
             android:id="@+id/listOfAnimalsView"/>
 </LinearLayout>

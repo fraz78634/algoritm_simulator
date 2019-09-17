@@ -88,7 +88,7 @@ public class busort extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insertion_sort);
+        setContentView(R.layout.activity_busort);
 
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
@@ -101,6 +101,8 @@ public class busort extends AppCompatActivity {
         butto2 = (Button) findViewById(R.id.button2);
         reset_bu = (Button) findViewById(R.id.reset_bu);
         final TextView textView = (TextView) findViewById(R.id.textView);
+        reset_bu.setClickable(true);
+        reset_bu.setEnabled(true);
         // auto = (Button) findViewById(R.id.auto);
         butto2.setClickable(false);
 
@@ -197,8 +199,13 @@ public class busort extends AppCompatActivity {
 
                 i = 0;
                 setCurrentImage();
+                if (i>0)
+                {
+                    reset_bu.setEnabled(false);
+                    reset_bu.setClickable(false);
+                }
 
-            }
+                            }
         });
     }
 }

@@ -10,14 +10,17 @@
                 <TextView
 
                     android:text="@string/baboon"
-                    android:background="@color/green"
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:id="@+id/nameView"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
                     android:paddingLeft="8dp"
-                    android:textColor="@android:color/black"/>
+                    android:paddingRight="8dp"
+
+                    android:textColor="@android:color/white"/>
 
 </LinearLayout>

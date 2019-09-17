@@ -22,7 +22,7 @@ public class bubblesortStudy extends AppCompatActivity {
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.b);
-        myToolbar2.setTitle("Insertion Sort");// toolbar layout file
+        myToolbar2.setTitle("Bubble Sort");// toolbar layout file
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 

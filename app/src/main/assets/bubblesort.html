@@ -4,11 +4,12 @@ body {
   padding: 5px 5px;
   border-bottom: 3px solid #f36d33;
 }
-
-
+p {
+    align:justify;
+}
 </style>
 
-<h1 class="entry-title">Bubble Sort</h1>
+<h2>Bubble Sort</h2>
 <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
 <p><strong>Example:</strong><br /><strong>First Pass:</strong><br />(&nbsp;<strong>5</strong>&nbsp;<strong>1</strong>&nbsp;4 2 8 ) &ndash;&gt; (&nbsp;<strong>1</strong>&nbsp;<strong>5</strong>&nbsp;4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 &gt; 1.<br />( 1&nbsp;<strong>5</strong>&nbsp;<strong>4</strong>&nbsp;2 8 ) &ndash;&gt;&nbsp; ( 1&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;2 8 ), Swap since 5 &gt; 4<br />( 1 4&nbsp;<strong>5</strong>&nbsp;<strong>2</strong>&nbsp;8 ) &ndash;&gt;&nbsp; ( 1 4&nbsp;<strong>2</strong>&nbsp;<strong>5</strong>&nbsp;8 ), Swap since 5 &gt; 2<br />( 1 4 2&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;) &ndash;&gt; ( 1 4 2&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;), Now, since these elements are already in order (8 &gt; 5), algorithm does not swap them.</p>
 <p><strong>Second Pass:</strong><br />(&nbsp;<strong>1</strong>&nbsp;<strong>4</strong>&nbsp;2 5 8 ) &ndash;&gt; (&nbsp;<strong>1</strong>&nbsp;<strong>4</strong>&nbsp;2 5 8 )<br />( 1&nbsp;<strong>4</strong>&nbsp;<strong>2</strong>&nbsp;5 8 ) &ndash;&gt; ( 1&nbsp;<strong>2</strong>&nbsp;<strong>4</strong>&nbsp;5 8 ), Swap since 4 &gt; 2<br />( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 ) &ndash;&gt; ( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 )<br />( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;) &ndash;&gt;&nbsp; ( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;)<br />Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one&nbsp;<strong>whole</strong>&nbsp;pass without&nbsp;<strong>any</strong>&nbsp;swap to know it is sorted.</p>
@@ -70,7 +71,7 @@ import java.io.*;
 class GFG
 {
 <div style="background: #d0d3d4;page-break-inside: avoid;
-    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"">
+    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;">
 <pre style="font-family: monospace; margin:0em"><code>
 	// An optimized version of Bubble Sort
 	static void bubbleSort(int arr[], int n)
@@ -125,4 +126,4 @@ class GFG
 <p><strong>Boundary Cases:</strong>&nbsp;Bubble sort takes minimum time (Order of n) when elements are already sorted.</p>
 <p><strong>Sorting In Place:&nbsp;</strong>Yes</p>
 <p><strong>Stable:</strong>&nbsp;Yes</p>
-<p align="justify">Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.In computer graphics it is popular for its capability to detect a very small error (like swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n). For example, it is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to x axis) and with incrementing y their order changes (two elements are swapped) only at intersections of two lines</p>
+<p>Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.In computer graphics it is popular for its capability to detect a very small error (like swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n). For example, it is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to x axis) and with incrementing y their order changes (two elements are swapped) only at intersections of two lines</p>
