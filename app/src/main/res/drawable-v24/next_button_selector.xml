@@ -13,6 +13,7 @@
 
         </shape>
     </item> <!-- pressed -->
+
     <item android:state_focused="true">
         <shape android:shape="rectangle">
 

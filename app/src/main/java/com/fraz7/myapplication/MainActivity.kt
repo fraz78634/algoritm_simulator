@@ -8,9 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.ContextCompat.getColor
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.Toast
@@ -27,36 +25,30 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
+
+
 
         listOfAnimals.add(Animal("Sort",0,true ))
         listOfAnimals.add(Animal("Bubble Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Insertion Sort",R.drawable.book,false ))
         listOfAnimals.add(Animal("Heap Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Selection Sort" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Merge Sort" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Quick Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("List Search" ,0,true))
         listOfAnimals.add(Animal("Linear Search" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Binary Search" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Jump Search",R.drawable.book,false ))
-        listOfAnimals.add(Animal("Interpolation Search" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Sort",0,true ))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Zebra" ,0,true))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Baboon",0,true ))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Zebra" ,0,true))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Baboon",0,true ))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Zebra" ,0,true))
-        listOfAnimals.add(Animal("White Tiger" ,R.drawable.book,false))
-
+        listOfAnimals.add(Animal("Data Structure",0,true ))
+        listOfAnimals.add(Animal("Arrays" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Stacks" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Queues" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Lists" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Hash Tables",R.drawable.book,false ))
+        listOfAnimals.add(Animal("Heaps" ,R.drawable.book,false))
+        listOfAnimals.add(Animal("Binary Search Tree" ,R.drawable.book,false))
 
 
         setSupportActionBar(findViewById(R.id.tool_bar))
@@ -87,21 +79,19 @@ class MainActivity : AppCompatActivity() {
                  myView.nameView.text = animals.name!!
                  if (position == 0)
                  {
-                    myView.nameView.setBackgroundColor(Color.parseColor("#488bd8"))
-                 }
-                 if (position == 5)
-                 {
-                     myView.nameView.setBackgroundColor(Color.parseColor("#09b693"))
-                 }
-                 if (position == 10)
-                 {
-                     myView.nameView.setBackgroundColor(Color.parseColor("#1ac260"))
-                 }
-                 if (position == 14)
-                 {
-                     myView.nameView.setBackgroundColor(Color.parseColor("#8db529"))
-                 }
+                     myView.nameView.setBackgroundResource(R.color.sort_color)
 
+                 }
+                 if (position == 7)
+                 {
+                     myView.nameView.setBackgroundResource(R.color.list_color)
+                     //myView.nameView.setBackgroundColor(Color.parseColor("#09b693"))
+                 }
+                 if (position == 11)
+                 {
+                     myView.nameView.setBackgroundResource(R.color.datastru_color)
+
+                 }
 
                  return myView
              }
@@ -130,6 +120,94 @@ class MainActivity : AppCompatActivity() {
                      if (position == 4) {
                          val intent = Intent(context, selectionSort::class.java)
                          context!!.startActivity(intent)
+
+                     }
+                     if (position == 5) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                          val intent = Intent(context, merge_sort::class.java)
+                          context!!.startActivity(intent)
+
+                     }
+                     if (position == 6) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 8) {
+
+                          val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent)
+
+                     }
+                     if (position == 9) {
+
+                           val intent = Intent(context, binarysearch::class.java)
+                           context!!.startActivity(intent)
+
+                     }
+                     if (position == 10) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 12) {
+
+                          val intent = Intent(context, ary::class.java)
+                          context!!.startActivity(intent)
+
+                     }
+                     if (position == 13) {
+
+
+                          val intent = Intent(context, stack::class.java)
+                          context!!.startActivity(intent)
+
+                     }
+                     if (position == 14) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 15) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 16) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 17) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 18) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
+
+                     }
+                     if (position == 18) {
+                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+                         /* val intent = Intent(context, linear_search::class.java)
+                          context!!.startActivity(intent) */
 
                      }
                      Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()

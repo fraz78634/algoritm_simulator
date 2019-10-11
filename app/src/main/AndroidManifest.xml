@@ -9,29 +9,74 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".selectionsort_stdy">
+        <activity android:name=".stack">
+        </activity>
+        <activity android:name=".array_stdy">
+        </activity>
+        <activity android:name=".merge_sort">
+        </activity>
+        <activity android:name=".ary">
+        </activity>
+        <activity android:name=".binarysearch_stdy">
+        </activity>
+        <activity android:name=".binarysearch">
+        </activity>
+        <activity android:name=".linearsearch_stdy">
+        </activity>
+        <activity
+                android:name=".linear_search"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".selectionsort_stdy"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
         <activity android:name=".selectionSort">
         </activity>
-        <activity android:name=".heapsort_stdy">
+        <activity
+                android:name=".heapsort_stdy"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".heapSort">
+        <activity
+                android:name=".heapSort"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".insertionsort_stdy">
+        <activity
+                android:name=".insertionsort_stdy"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".bubblesortStudy"
-                android:parentActivityName=".MainActivity">
+                android:configChanges="orientation|keyboardHidden"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".insertionSort"
-                android:parentActivityName=".MainActivity">
+                android:configChanges="orientation|keyboardHidden"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".busort"
-                android:parentActivityName=".MainActivity">
+                android:configChanges="orientation|keyboardHidden"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+                android:name=".MainActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".welcome_screen"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

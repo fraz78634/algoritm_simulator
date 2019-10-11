@@ -1,6 +1,7 @@
 package com.fraz7.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
@@ -21,66 +23,66 @@ import java.util.HashMap;
 import java.util.List;
 
 public class busort extends AppCompatActivity {
-    private static Button button, butto2, reset_bu;
+    private static Button next_bu, pre_bu, reset_bu;
     private static ImageView imageView;
     private static TextView textView;
     private int i = 0;
     Toolbar myToolbar2;
+    private boolean flag = false;
     // image resource
 
-    int[] images = {R.drawable.im_1, R.drawable.im_2, R.drawable.im_3, R.drawable.im_4, R.drawable.im_5, R.drawable.im_6, R.drawable.im_7, R.drawable.im_8,
-            R.drawable.im_9, R.drawable.im_10, R.drawable.im_11, R.drawable.im_12, R.drawable.im_13, R.drawable.im_14, R.drawable.im_15, R.drawable.im_16, R.drawable.im_17,
-            R.drawable.im_18, R.drawable.im_19, R.drawable.im_20, R.drawable.im_21, R.drawable.im_22, R.drawable.im_23, R.drawable.im_24, R.drawable.im_25, R.drawable.im_26,
-            R.drawable.im_27, R.drawable.im_28, R.drawable.im_29, R.drawable.im_30, R.drawable.im_31, R.drawable.im_32, R.drawable.im_33, R.drawable.im_34, R.drawable.im_35,
-            R.drawable.im_36, R.drawable.im_37, R.drawable.im_38, R.drawable.im_39, R.drawable.im_40, R.drawable.im_41, R.drawable.im_42, R.drawable.im_43, R.drawable.im_44,
-            R.drawable.im_45};
-
     List<BSortResource> resourceList = new ArrayList<BSortResource>() {{
-        add(new BSortResource(R.drawable.im_1, "Description im_1 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_2, "Description im_2 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_3, "Description im_3 for image one this is bubble sort"));
-        add(new BSortResource(R.drawable.im_4, "Description im_4 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_5, "Description im_5 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_6, "Description im_6 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_7, "Description im_7 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.im_8, "Description im_8"));
-        add(new BSortResource(R.drawable.im_9, "Description im_9"));
-        add(new BSortResource(R.drawable.im_10, "Description im_10"));
-        add(new BSortResource(R.drawable.im_11, "Description im_11"));
-        add(new BSortResource(R.drawable.im_12, "Description im_12"));
-        add(new BSortResource(R.drawable.im_13, "Description im_13"));
-        add(new BSortResource(R.drawable.im_14, "Description im_14"));
-        add(new BSortResource(R.drawable.im_15, "Description im_15"));
-        add(new BSortResource(R.drawable.im_16, "Description im_16"));
-        add(new BSortResource(R.drawable.im_17, "Description im_17"));
-        add(new BSortResource(R.drawable.im_18, "Description im_18"));
-        add(new BSortResource(R.drawable.im_19, "Description im_19"));
-        add(new BSortResource(R.drawable.im_20, "Description im_20"));
-        add(new BSortResource(R.drawable.im_21, "Description im_21"));
-        add(new BSortResource(R.drawable.im_22, "Description im_22"));
-        add(new BSortResource(R.drawable.im_23, "Description im_23"));
-        add(new BSortResource(R.drawable.im_24, "Description im_24"));
-        add(new BSortResource(R.drawable.im_25, "Description im_25"));
-        add(new BSortResource(R.drawable.im_26, "Description im_26"));
-        add(new BSortResource(R.drawable.im_27, "Description im_27"));
-        add(new BSortResource(R.drawable.im_28, "Description im_28"));
-        add(new BSortResource(R.drawable.im_29, "Description im_29"));
-        add(new BSortResource(R.drawable.im_30, "Description im_30"));
-        add(new BSortResource(R.drawable.im_31, "Description im_31"));
-        add(new BSortResource(R.drawable.im_32, "Description im_32"));
-        add(new BSortResource(R.drawable.im_33, "Description im_33"));
-        add(new BSortResource(R.drawable.im_34, "Description im_34"));
-        add(new BSortResource(R.drawable.im_35, "Description im_35"));
-        add(new BSortResource(R.drawable.im_36, "Description im_36"));
-        add(new BSortResource(R.drawable.im_37, "Description im_37"));
-        add(new BSortResource(R.drawable.im_38, "Description im_38"));
-        add(new BSortResource(R.drawable.im_39, "Description im_39"));
-        add(new BSortResource(R.drawable.im_40, "Description im_40"));
-        add(new BSortResource(R.drawable.im_41, "Description im_41"));
-        add(new BSortResource(R.drawable.im_42, "Description im_42"));
-        add(new BSortResource(R.drawable.im_43, "Description im_43"));
-        add(new BSortResource(R.drawable.im_44, "Description im_44"));
-        add(new BSortResource(R.drawable.im_45, "Description im_45"));
+        add(new BSortResource(R.drawable.im_1, R.string.busort1));
+        add(new BSortResource(R.drawable.im_1, R.string.busort2));
+        add(new BSortResource(R.drawable.im_1, R.string.busort3));
+        add(new BSortResource(R.drawable.im_1, R.string.busort4));
+        add(new BSortResource(R.drawable.im_2, R.string.busort5));
+        add(new BSortResource(R.drawable.im_2, R.string.busort6));
+        add(new BSortResource(R.drawable.im_2, R.string.busort7));
+        add(new BSortResource(R.drawable.im_3, R.string.busort8));
+        add(new BSortResource(R.drawable.im_3, R.string.busort9));
+        add(new BSortResource(R.drawable.im_4, R.string.busort10));
+        add(new BSortResource(R.drawable.im_5, R.string.busort10));
+        add(new BSortResource(R.drawable.im_6, R.string.busort10));
+        add(new BSortResource(R.drawable.im_7, R.string.busort10));
+        add(new BSortResource(R.drawable.im_8, R.string.busort10));
+        add(new BSortResource(R.drawable.im_9, R.string.busort10));
+        add(new BSortResource(R.drawable.im_10, R.string.busort10));
+        add(new BSortResource(R.drawable.im_11, R.string.busort10));
+        add(new BSortResource(R.drawable.im_12, R.string.busort10));
+        add(new BSortResource(R.drawable.im_13, R.string.busort11));
+        add(new BSortResource(R.drawable.im_14, R.string.busort12));
+        add(new BSortResource(R.drawable.im_15, R.string.busort13));
+        add(new BSortResource(R.drawable.im_16, R.string.busort13));
+        add(new BSortResource(R.drawable.im_17, R.string.busort13));
+        add(new BSortResource(R.drawable.im_18, R.string.busort13));
+        add(new BSortResource(R.drawable.im_19, R.string.busort13));
+        add(new BSortResource(R.drawable.im_20, R.string.busort13));
+        add(new BSortResource(R.drawable.im_21, R.string.busort13));
+        add(new BSortResource(R.drawable.im_22, R.string.busort13));
+        add(new BSortResource(R.drawable.im_23, R.string.busort13));
+        add(new BSortResource(R.drawable.im_24, R.string.busort13));
+        add(new BSortResource(R.drawable.im_25, R.string.busort13));
+        add(new BSortResource(R.drawable.im_26, R.string.busort13));
+        add(new BSortResource(R.drawable.im_27, R.string.busort13));
+        add(new BSortResource(R.drawable.im_28, R.string.busort13));
+        add(new BSortResource(R.drawable.im_29, R.string.busort13));
+        add(new BSortResource(R.drawable.im_30, R.string.busort13));
+        add(new BSortResource(R.drawable.im_31, R.string.busort13));
+        add(new BSortResource(R.drawable.im_32, R.string.busort13));
+        add(new BSortResource(R.drawable.im_33, R.string.busort13));
+        add(new BSortResource(R.drawable.im_34, R.string.busort13));
+        add(new BSortResource(R.drawable.im_35, R.string.busort13));
+        add(new BSortResource(R.drawable.im_36, R.string.busort13));
+        add(new BSortResource(R.drawable.im_37, R.string.busort13));
+        add(new BSortResource(R.drawable.im_38, R.string.busort13));
+        add(new BSortResource(R.drawable.im_39, R.string.busort13));
+        add(new BSortResource(R.drawable.im_40, R.string.busort13));
+        add(new BSortResource(R.drawable.im_41, R.string.busort13));
+        add(new BSortResource(R.drawable.im_42, R.string.busort13));
+        add(new BSortResource(R.drawable.im_43, R.string.busort13));
+        add(new BSortResource(R.drawable.im_44, R.string.busort13));
+        add(new BSortResource(R.drawable.im_45, R.string.busort14));
 
 
     }};
@@ -88,23 +90,29 @@ public class busort extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_busort);
+
+
 
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
-        myToolbar2.setNavigationIcon(R.drawable.b);
+        myToolbar2.setNavigationIcon(R.drawable.backarrow);
         myToolbar2.setTitle("Bubble Sort");// toolbar layout file
+        myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 
-        button = (Button) findViewById(R.id.button);
-        butto2 = (Button) findViewById(R.id.button2);
+        next_bu = (Button) findViewById(R.id.button);
+        pre_bu = (Button) findViewById(R.id.button2);
         reset_bu = (Button) findViewById(R.id.reset_bu);
         final TextView textView = (TextView) findViewById(R.id.textView);
+        next_bu.setClickable(true);
+        next_bu.setEnabled(true);
         reset_bu.setClickable(true);
         reset_bu.setEnabled(true);
-        // auto = (Button) findViewById(R.id.auto);
-        butto2.setClickable(false);
+        pre_bu.setClickable(false);
 
 
         addListenerOnButton();
@@ -139,19 +147,32 @@ public class busort extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
-        button.setOnClickListener(new OnClickListener() {
+        next_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setEnabled(true);
+                next_bu.setEnabled(true);
+
+                if (flag = true) {
+                    if (i < resourceList.size() - 1) {
+                        i++;
+                        i = i % resourceList.size();
+                        setCurrentImage();
 
 
-                if (i < resourceList.size() - 1) {
-                    i++;
-                    i = i % resourceList.size();
-                    setCurrentImage();
+                    }
+                   /* else {
+                       // next_bu.setClickable(false);
+                        next_bu.setEnabled(false);
+                        next_bu.setBackgroundResource(R.color.bu_disable);
+                    } */
 
                 }
+                flag = false;
+
             }
+
+
+
         });
     }
 
@@ -170,7 +191,7 @@ public class busort extends AppCompatActivity {
     }
 
     public void addback() {
-        butto2.setOnClickListener(new OnClickListener() {
+        pre_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -181,7 +202,7 @@ public class busort extends AppCompatActivity {
 
                     i = i % resourceList.size();
                     setCurrentImage();
-                    butto2.setClickable(true);
+                    pre_bu.setClickable(true);
 
                 }
 
@@ -199,11 +220,7 @@ public class busort extends AppCompatActivity {
 
                 i = 0;
                 setCurrentImage();
-                if (i>0)
-                {
-                    reset_bu.setEnabled(false);
-                    reset_bu.setClickable(false);
-                }
+
 
                             }
         });

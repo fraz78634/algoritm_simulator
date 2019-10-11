@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Algorithm Simulator</string>
     <string name="textview">TextView</string>
     <string name="image_of_animal">image of animal</string>
     <string name="baboon">Baboon</string>
@@ -15,5 +15,104 @@
     <string name="simulator">simulator</string>
     <string name="study">study</string>
     <string name="button">button</string>
+    <string name="title_activity_welcome_screen">welcome_screen</string>
+
+
+    <!--strings for busort -->
+    <string name="busort1">Bubble sort is a sorting algorithm used to sort a sequence of numbers</string>
+    <string name="busort2">The scale at the right end of the sequence will compare the number on their left and right
+        sides.
+    </string>
+    <string name="busort3">In this case, they will compare 8 and 2</string>
+    <string name="busort4">After comparing them, if the number on the right is found to be smaller, the number will be
+        swapped.
+    </string>
+    <string name="busort5">8 is greater than 2 so the numbers do not get swapped.</string>
+    <string name="busort6">After the comparison is finished, the scale move one position to the left.</string>
+    <string name="busort7">Numbers are compared once again.</string>
+    <string name="busort8">This time 2 is smaller than 7 so the numbers get swapped.</string>
+    <string name="busort9">The scale move one position to left.</string>
+    <string name="busort10">This operation is repeated untill the scale reach the left end of the sequence</string>
+    <string name="busort11">The number on the left edge is considered fully sorted.</string>
+    <string name="busort12">and the scale is moved back to the right edge.</string>
+    <string name="busort13">The same operations are repeated until all of the numbers are fully sorted.</string>
+    <string name="busort14">Now sorting is completed.</string>
+
+    <!--strings for Intertion sort -->
+    <string name="insort1">Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one
+        item at a time.
+    </string>
+    <string name="insort2">To begin the leftmost number is considered as fully sorted</string>
+    <string name="insort3">Next, from the remaining numbers the leftmost number is taken out and compare to the already
+        sorted number to its left
+    </string>
+    <string name="insort4">If the sorted number is larger, the two numbers swap.</string>
+    <string name="insort5">Here 3 > 1 so numbers swap</string>
+    <string name="insort6">The number reached the left edge, so the number 1 stops moving.</string>
+    <string name="insort7">Number 1 is now considered as fully sorted.</string>
+    <string name="insort8">Now again the leftmost number from the remaining numbers is taken out and compared to the
+        number to its left
+    </string>
+    <string name="insort9">In this case, 3 is less than 5 so numbers were not swapped</string>
+    <string name="insort10">and 5 is considered as fully sorted.</string>
+    <string name="insort11">As before, the leftmost number from the remaining numbers is taken out and compared to the
+        number to its left
+    </string>
+    <string name="insort12">In this case, 5 is greater than 2 so numbers were swapped</string>
+    <string name="insort13">3 is greater than 2 so numbers were swapped</string>
+    <string name="insort14">1 is less than 2. A smaller number is appeared, so the 2 stops moving.</string>
+    <string name="insort15">The 2 is now considered as fully sorted.</string>
+    <string name="insort16">The same operations are repeated until all of the numbers are fully sorted.</string>
+    <string name="insort17">Now sorting is completed.</string>
+
+    <!-- heap sort -->
+    <string name="hep1">Heap sort is an algorithm used to sort a sequence of numbers</string>
+    <string name="hep2">At first,all the numbers are sorted in a heap. These heaps are constructed so that numbers are
+        in descending order.
+    </string>
+    <string name="hep3">7 is greater than 5</string>
+    <string name="hep4">To make heap in descending order 7 has become the root and 5 as child</string>
+    <string name="hep5">All the numbers are sorted in a heap. These heaps are constructed so that numbers are in
+        descending order.
+    </string>
+    <string name="hep6">All the numbers have to stored in heap.</string>
+    <string name="hep7">Next, the numbers stored in the heap are taken out one by one.</string>
+    <string name="hep8">One property of descending heap is that numbers are removed from largest to smallest, so if you line the numbers up in the opposite order from right to left as they get removed, sorting is complete.</string>
+    <string name="hep9">All the numbers were removed from the heap, and sorting is complete.</string>
+
+    <!-- Merge sort -->
+    <string name="mer1">Merge sort is a sorting algorithm used to sort a sequence of numbers</string>
+    <string name="mer2">First, the sequence is divided further and further into halves.</string>
+    <string name="mer3">The divisions of array is completed. </string>
+    <string name="mer4">Next, the divided groups are combined.</string>
+    <string name="mer5">When being combined,each group\'s numbers are arranged so that they are ordered from smallest to largest after combination. </string>
+    <string name="mer6">When groups with multiple numbers are combined, the first numbers are compared.</string>
+    <string name="mer7">In the diagram, first numbers 2 and 3 will be compared.</string>
+    <string name="mer8">3 is greater than 2, so the  2 is moved.</string>
+    <string name="mer9">The remaining rows  have  their first numbers compared in the same way</string>
+    <string name="mer10">3 is less than 5, so the 3 is moved.</string>
+    <string name="mer11">5 and 7 will be compared.</string>
+    <string name="mer12">5 is less than 7, so the 5 is moved.</string>
+    <string name="mer13">The remaining 7 is moved. </string>
+    <string name="mer14">The combining of groups is repeated recursively until all the numbers form one group.</string>
+    <string name="mer15">Combining is complete, and the sequence has been sorted.</string>
+    <string name="mer16">This concludes the explanation of merge sort.</string>
+
+    <!-- selection sort -->
+    <string name="sel1"></string>
+
+
+
+
+    <!-- linear search -->
+    <string name="lin1"></string>
+
+
+    <!-- binary search -->
+    <string name="bin1"></string>
+
+    <!-- array -->
+    <string name="arry1"></string>
+
 
 </resources>

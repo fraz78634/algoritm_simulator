@@ -1,0 +1,179 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Queue</h1>
+<p>Queue is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both its ends. One end is always used to insert data (enqueue) and the other is used to remove data (dequeue). Queue follows First-In-First-Out methodology, i.e., the data item stored first will be accessed first.</p>
+<p>A real-world example of queue can be a single-lane one-way road, where the vehicle enters first, exits first. More real-world examples can be seen as queues at the ticket windows and bus-stops.</p>
+<h3>Queue Representation:</h3>
+<p>As we now understand that in queue, we access both ends for different reasons.As in stacks, a queue can also be implemented using Arrays, Linked-lists, Pointers and Structures. For the sake of simplicity, we shall implement queues using one-dimensional array.</p>
+<h3>Basic Operations:</h3>
+<p>Queue operations may involve initializing or defining the queue, utilizing it, and then completely erasing it from the memory. Here we shall try to understand the basic operations associated with queues -</p>
+<ul>
+<li> <strong>enqueue()</strong> - add (store) an item to the queue.</li>
+<li> <strong>dequeue()</strong> - remove (access) an item from the queue.</li>
+</ul>
+<p>Few more functions are required to make the above-mentioned queue operation efficient. These are -</p>
+<ul>
+<li><strong>peek()</strong> - Gets the element at the front of the queue without removing it.</li>
+<li><strong>isfull()</strong> - Checks if the queue is full.</li>
+<li><strong>isempty()</strong> - Checks if the queue is empty.</li>
+
+</ul>
+<p>In queue, we always dequeue (or access) data, pointed by front pointer and while enqueing (or storing) data in the queue we take help of rear pointer.</p>
+<h3>Applications of Queue:</h3>
+<p>Queue is used when things don’t have to be processed immediatly, but have to be processed in First InFirst Out order like Breadth First Search. This property of Queue makes it also useful in following kind of scenarios.</p>
+<ol>
+<li>When a resource is shared among multiple consumers. Examples include CPU scheduling, Disk Scheduling.</li>
+<li>When data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Examples include IO Buffers, pipes, file IO, etc.</li>
+</ol>
+<h3>Implementation Of Queue:</h3>
+<p>For implementing queue, we need to keep track of two indices, front and rear. We enqueue an item at the rear and dequeue an item from front. If we simply increment front and rear indices, then there may be problems, front may reach end of the array.</p>
+<h4>Java program for array implementation of queue:</h4>
+<div>
+<pre><code>
+  // A class to represent a queue 
+class Queue 
+{ 
+    int front, rear, size; 
+    int  capacity; 
+    int array[]; 
+       
+    public Queue(int capacity) { 
+         this.capacity = capacity; 
+         front = this.size = 0;  
+         rear = capacity - 1; 
+         array = new int[this.capacity]; 
+            
+    } 
+       
+    // Queue is full when size becomes equal to  
+    // the capacity  
+    boolean isFull(Queue queue) 
+    {  return (queue.size == queue.capacity); 
+    } 
+       
+    // Queue is empty when size is 0 
+    boolean isEmpty(Queue queue) 
+    {  return (queue.size == 0); } 
+       
+    // Method to add an item to the queue.  
+    // It changes rear and size 
+    void enqueue( int item) 
+    { 
+        if (isFull(this)) 
+            return; 
+        this.rear = (this.rear + 1)%this.capacity; 
+        this.array[this.rear] = item; 
+        this.size = this.size + 1; 
+        System.out.println(item+ " enqueued to queue"); 
+    } 
+       
+    // Method to remove an item from queue.   
+    // It changes front and size 
+    int dequeue() 
+    { 
+        if (isEmpty(this)) 
+            return Integer.MIN_VALUE; 
+           
+        int item = this.array[this.front]; 
+        this.front = (this.front + 1)%this.capacity; 
+        this.size = this.size - 1; 
+        return item; 
+    } 
+       
+    // Method to get front of queue 
+    int front() 
+    { 
+        if (isEmpty(this)) 
+            return Integer.MIN_VALUE; 
+           
+        return this.array[this.front]; 
+    } 
+        
+    // Method to get rear of queue 
+    int rear() 
+    { 
+        if (isEmpty(this)) 
+            return Integer.MIN_VALUE; 
+           
+        return this.array[this.rear]; 
+    } 
+} 
+   
+    
+// Driver class 
+public class Test 
+{ 
+    public static void main(String[] args)  
+    { 
+        Queue queue = new Queue(1000); 
+            
+        queue.enqueue(10); 
+        queue.enqueue(20); 
+        queue.enqueue(30); 
+        queue.enqueue(40); 
+        
+        System.out.println(queue.dequeue() +  
+                     " dequeued from queue\n"); 
+        
+        System.out.println("Front item is " +  
+                               queue.front()); 
+           
+        System.out.println("Rear item is " +  
+                                queue.rear()); 
+    } 
+} 
+  </code></pre>
+</div>
+
+<h4>Output:</h4>
+<div>
+<pre><code>10 enqueued to queue
+20 enqueued to queue
+30 enqueued to queue
+40 enqueued to queue
+10 dequeued from queue
+Front item is 20
+Rear item is 40</code></pre>
+</div>
+<p><strong> Time Complexity:</strong> Time complexity of all operations like enqueue(), dequeue(), isFull(), isEmpty(), front() and rear() is O(1). There is no loop in any of the operations.</p>
+
+</body>
+</html>

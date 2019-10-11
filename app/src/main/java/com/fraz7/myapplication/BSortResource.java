@@ -2,7 +2,7 @@ package com.fraz7.myapplication;
 
 public class BSortResource {
     private int resourceID;
-    private String description;
+    private int description;
 
     public int getResourceID() {
         return resourceID;
@@ -12,15 +12,15 @@ public class BSortResource {
         this.resourceID = resourceID;
     }
 
-    public String getDescription() {
+    public int getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(int description) {
         this.description = description;
     }
 
-    public BSortResource(int resourceID, String description) {
+    public BSortResource(int resourceID, int description) {
         this.resourceID = resourceID;
         this.description = description;
     }

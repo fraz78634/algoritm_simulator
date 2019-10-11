@@ -1,35 +1,66 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
 <style>
 body {
   display: block;
-  padding: 5px 5px;
+ padding: 5px 5px;
   border-bottom: 3px solid #f36d33;
 }
 p {
-    align:justify;
+    text-align:justify;
+   
 }
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
 </style>
 <header class="entry-header">
 <h1 class="entry-title">HeapSort</h1>
 </header>
-<div class="entry-content">
-<div>
 <p>Heap sort is a comparison based sorting technique based on Binary Heap data structure. It is similar to selection sort where we first find the maximum element and place the maximum element at the end. We repeat the same process for remaining element.</p>
-<p><strong>What is Binary Heap?</strong><br />Let us first define a Complete Binary Tree. A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.</p>
-<p>A Binary Heap is a Complete Binary Tree where items are stored in a special order such that value in a parent node is greater(or smaller) than the values in its two children nodes. The former is called as max heap and the latter is called min heap. The heap can be represented by binary tree or array.</p>
-<p><strong>Why array based representation for Binary Heap?</strong><br />Since a Binary Heap is a Complete Binary Tree, it can be easily represented as array and array based representation is space efficient. If the parent node is stored at index I, the left child can be calculated by 2 * I + 1 and right child by 2 * I + 2 (assuming the indexing starts at 0).</p>
-<p><strong>Heap Sort Algorithm for sorting in increasing order:</strong><br /><strong>1.</strong>&nbsp;Build a max heap from the input data.<br /><strong>2.</strong>&nbsp;At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of heap by 1. Finally, heapify the root of tree.<br /><strong>3.</strong>&nbsp;Repeat above steps while size of heap is greater than 1.</p>
-<p><strong>How to build the heap?</strong><br />Heapify procedure can be applied to a node only if its children nodes are heapified. So the heapification must be performed in the bottom up order.</p>
-<p>Lets understand with the help of an example:</p>
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 0.5em 1.5em;display: block;word-wrap: break-word;"><code>
+<h3>What is Binary Heap?</h3>
+<p>Let us first define a Complete Binary Tree. A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.A Binary Heap is a Complete Binary Tree where items are stored in a special order such that value in a parent node is greater(or smaller) than the values in its two children nodes. The former is called as max heap and the latter is called min heap. The heap can be represented by binary tree or array.</p>
+<h3>Why array based representation for Binary Heap?</h3>
+<p>Since a Binary Heap is a Complete Binary Tree, it can be easily represented as array and array based representation is space efficient. If the parent node is stored at index I, the left child can be calculated by 2 * I + 1 and right child by 2 * I + 2 (assuming the indexing starts at 0).</p>
+<h3>Heap Sort Algorithm for sorting in increasing order:</h3>
+<ol><li>&nbsp;Build a max heap from the input data.</li><li>At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of heap by 1. Finally, heapify the root of tree.</li><li>&nbsp;Repeat above steps while size of heap is greater than 1.</li></ol>
+<h3>How to build the heap?</h3>
+<p>Heapify procedure can be applied to a node only if its children nodes are heapified. So the heapification must be performed in the bottom up order.</p>
+<h4>Lets understand with the help of an example:</h4>
+<div>
+<pre><code>
 <p>Input data: 4, 10, 3, 5, 1<br /> 4(0)<br /> / \<br /> 10(1) 3(2)<br /> / \<br /> 5(3) 1(4)</p>
 <p>The numbers in bracket represent the indices in the array <br />representation of data.</p>
 <p>Applying heapify procedure to index 1:<br /> 4(0)<br /> / \<br /> 10(1) 3(2)<br /> / \<br />5(3) 1(4)</p>
-<p>Applying heapify procedure to index 0:<br /> 10(0)<br /> / \<br /> 5(1) 3(2)<br /> / \<br /> 4(3) 1(4)<br />The heapify procedure calls itself recursively to build heap in top down manner.</p> </pre></code>
+<p>Applying heapify procedure to index 0:<br /> 10(0)<br /> / \<br /> 5(1) 3(2)<br /> / \<br /> 4(3) 1(4)<br />The heapify procedure calls itself recursively to build heap in top down manner.</p> </pre></code></div>
 
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 0.5em 1.5em;display: block;word-wrap: break-word;"><code>
-// Java program for implementation of Heap Sort 
+<h4>Java program for implementation of Heap Sort: </h4>
+<div>
+<pre><code>
 public class HeapSort 
 { 
 	public void sort(int arr[]) 
@@ -104,9 +135,8 @@ public class HeapSort
 	} 
 } 
 
-	</pre></code>
-	<div class="line number74 index73 alt1"><strong>Time Complexity:&nbsp;</strong>Time complexity of heapify is O(Logn). Time complexity of createAndBuildHeap() is O(n) and overall time complexity of Heap Sort is O(nLogn).</div>
-<div class="line number74 index73 alt1"><strong>Applications of HeapSort</strong></div>
+	</pre></code></div>
+	<h4>Time Complexity:&nbsp;</h4>Time complexity of heapify is <strong>O(Logn)</strong>. Time complexity of createAndBuildHeap() is <strong>O(n)</strong> and overall time complexity of Heap Sort is <strong> O(nLogn)</strong>.
+<h3>Applications of HeapSort</h3>
 <ol><li>Sort a nearly sorted (or K sorted) array</li><li>k largest(or smallest) elements in an array</li></ol>
-<div class="line number74 index73 alt1"><p>Heap sort algorithm has limited uses because Quicksort and Mergesort are better in practice. Nevertheless, the Heap data structure itself is enormously used.</p></div>
-</div>
+<p align="justify">Heap sort algorithm has limited uses because Quicksort and Mergesort are better in practice. Nevertheless, the Heap data structure itself is enormously used.</p>

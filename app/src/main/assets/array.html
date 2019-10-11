@@ -1,0 +1,98 @@
+<html>
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    align:justify;
+   
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Arrays</h1>
+<p>Arrays are special variables which can hold more than one value under the same variable name, organised with an index. Arrays are defined using a very straightforward syntax:</p>
+<div>
+<pre><code>/* defines an array of 10 integers */</span>
+<span class="token keyword">int</span> numbers<span class="token punctuation">[10]</span><span class="token punctuation">;</span></code></pre></div>
+<p>Accessing a number from the array is done using the same syntax. Notice that arrays in C are zero-based, which means that if we defined an array of size 10, then the array cells 0 through 9 (inclusive) are defined.<code style = "background-color: #f4f4f4;padding: 3px;border-radius: 5px;">numbers[10]</code> is not an actual value.</p>
+<div><pre><code><span class="token keyword">int</span> numbers<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* populate the array */</span>
+numbers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">40</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">70</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* print the 7th number from the array, which has an index of 6 */</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The 7th number in the array is %d"</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Arrays can only have one type of variable, because they are implemented as a sequence of values in the computer's memory. Because of that, accessing a specific array cell is very efficient.</p>
+<h2>Multidimensional Arrays</h2>
+<p>Arrays, we covered above, well, arrays and how they work. The arrays we looked at are all one-dimensional, but C can create and use multi-dimensional arrays. Here is the general form of a multidimensional array declaration:</p>
+<div>
+<pre><code>type name<span>[</span>size1<span>]</span><span>[</span>size2<span>]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">[</span>sizeN<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
+<p>For example, here's a basic multidimensional array:</p>
+<div>
+<pre><code><span>int</span> foo<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+</div>
+<p>or</p>
+<div>
+<pre class="  language-c"><code class="  language-c"><span class="token keyword">char</span> vowels<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'u'</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></div>
+<h3>Two-dimensional Arrays</h3>
+<p>The simplest form of multidimensional array is the two-dimensional array. A two-dimensional array is pretty much a list of one-dimensional arrays. To declare a two-dimensional integer array of size [ x ][ y ], you would write something like this</p>
+<div>
+<pre><code>type arrayName <span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<p>Where <strong>type</strong> can be any data type (int, char, long, long long, double, etc.) and&nbsp;<strong>arrayName</strong> will be a valid C identifier, or variable. A two-dimensional array can be considered as a table which will have [ x ] number of rows and [ y ] number of columns.</p>
+<h3>Initializing Two-Dimensional Arrays</h3>
+<p>Multidimensional arrays may be used by specifying bracketed[] values for each row. Below is an array with 3 rows and each row has 4 columns. To make it easier, you can forget the 3 and keep it blank, it'll still work.</p>
+<div>
+<pre><code><span>int</span> a<span>[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>  
+   <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span> <span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">/*  initializers for row indexed by 0 */</span>
+   <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span> <span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">/*  initializers for row indexed by 1 */</span>
+   <span class="token punctuation">{</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">}</span>   <span class="token comment" spellcheck="true">/*  initializers for row indexed by 2 */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div>
+<p>The following initialization is the same to the previous example</p>
+<div>
+<pre><code class="  language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div>
+<h3>Accessing Two-Dimensional Array Elements</h3>
+<p>An element in a two-dimensional array is accessed by using the subscripts, i.e., row index and column index of the array. For example</p>
+<div>
+<pre class="  language-c"><code class="  language-c"><span class="token keyword">int</span> val <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<p>The above statement will take the 4th element from the 3rd row of the array.</p>
+</body>
+</html>

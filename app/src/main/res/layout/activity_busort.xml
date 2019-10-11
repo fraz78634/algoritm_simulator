@@ -20,7 +20,7 @@
             android:layout_marginRight="4dp"
             android:background="@drawable/boarder"
             android:contentDescription="@string/todo"
-            android:padding="10dp"
+            android:padding="5dp"
             android:src="@drawable/im_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

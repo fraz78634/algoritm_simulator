@@ -1,6 +1,7 @@
 package com.fraz7.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
@@ -34,40 +36,46 @@ public class insertionSort extends AppCompatActivity {
             R.drawable.ins_16,R.drawable.ins_17,R.drawable.ins_18,R.drawable.ins_19,R.drawable.ins_20,R.drawable.ins_21,R.drawable.ins_22,};
 
     List<BSortResource> resourceList = new ArrayList<BSortResource>() {{
-        add(new BSortResource(R.drawable.ins_1, "Description im_1 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_2, "Description im_2 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_3, "Description im_3 for image one this is bubble sort"));
-        add(new BSortResource(R.drawable.ins_4, "Description im_4 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_5, "Description im_5 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_6, "Description im_6 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_7, "Description im_7 for image one this is Insertion sort"));
-        add(new BSortResource(R.drawable.ins_8, "Description im_8"));
-        add(new BSortResource(R.drawable.ins_9, "Description im_9"));
-        add(new BSortResource(R.drawable.ins_10, "Description im_10"));
-        add(new BSortResource(R.drawable.ins_11, "Description im_11"));
-        add(new BSortResource(R.drawable.ins_12, "Description im_12"));
-        add(new BSortResource(R.drawable.ins_13, "Description im_13"));
-        add(new BSortResource(R.drawable.ins_14, "Description im_14"));
-        add(new BSortResource(R.drawable.ins_15, "Description im_15"));
-        add(new BSortResource(R.drawable.ins_16, "Description im_16"));
-        add(new BSortResource(R.drawable.ins_17, "Description im_17"));
-        add(new BSortResource(R.drawable.ins_18, "Description im_18"));
-        add(new BSortResource(R.drawable.ins_19, "Description im_19"));
-        add(new BSortResource(R.drawable.ins_20, "Description im_20"));
-        add(new BSortResource(R.drawable.ins_21, "Description im_21"));
-        add(new BSortResource(R.drawable.ins_22, "Description im_22"));
-
+        add(new BSortResource(R.drawable.ins_1, R.string.insort1));
+       add(new BSortResource(R.drawable.ins_2, R.string.insort2));
+        add(new BSortResource(R.drawable.ins_3, R.string.insort3));
+        add(new BSortResource(R.drawable.ins_4, R.string.insort4));
+        add(new BSortResource(R.drawable.ins_4, R.string.insort5));
+        add(new BSortResource(R.drawable.ins_4, R.string.insort6));
+        add(new BSortResource(R.drawable.ins_5, R.string.insort7));
+        add(new BSortResource(R.drawable.ins_6, R.string.insort8));
+        add(new BSortResource(R.drawable.ins_6, R.string.insort9));
+        add(new BSortResource(R.drawable.ins_7, R.string.insort10));
+        add(new BSortResource(R.drawable.ins_8, R.string.insort11));
+        add(new BSortResource(R.drawable.ins_9, R.string.insort12));
+        add(new BSortResource(R.drawable.ins_10, R.string.insort13));
+        add(new BSortResource(R.drawable.ins_10, R.string.insort14));
+        add(new BSortResource(R.drawable.ins_11, R.string.insort15));
+        add(new BSortResource(R.drawable.ins_12, R.string.insort16));
+        add(new BSortResource(R.drawable.ins_13,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_14,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_15,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_16,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_17,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_18,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_19,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_20,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_21,  R.string.insort16));
+        add(new BSortResource(R.drawable.ins_22,  R.string.insort17));
     }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insertion_sort);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_busort);
 
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
-        myToolbar2.setNavigationIcon(R.drawable.b);
+        myToolbar2.setNavigationIcon(R.drawable.backarrow);
         myToolbar2.setTitle("Insertion Sort");// toolbar layout file
+        myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 

@@ -12,4 +12,8 @@
     <color name="DARKSLATEBLUE">#483D8B</color>
     <color name="LIMEGREEN">#32CD32</color>
     <color name="list_highlight">#dcdcdc</color>
+    <color name="sort_color">#488bd8</color>
+    <color name="list_color">#09b693</color>
+    <color name="datastru_color">#1ac260</color>
+    <color name="bu_disable">#808080</color>
 </resources>

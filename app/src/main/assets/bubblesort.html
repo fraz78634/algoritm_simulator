@@ -1,3 +1,6 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
 <style>
 body {
   display: block;
@@ -5,125 +8,151 @@ body {
   border-bottom: 3px solid #f36d33;
 }
 p {
-    align:justify;
+    text-align:justify;
+   
 }
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
 </style>
 
-<h2>Bubble Sort</h2>
+<h1 class="entry-title">Bubble Sort</h1>
 <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
 <p><strong>Example:</strong><br /><strong>First Pass:</strong><br />(&nbsp;<strong>5</strong>&nbsp;<strong>1</strong>&nbsp;4 2 8 ) &ndash;&gt; (&nbsp;<strong>1</strong>&nbsp;<strong>5</strong>&nbsp;4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 &gt; 1.<br />( 1&nbsp;<strong>5</strong>&nbsp;<strong>4</strong>&nbsp;2 8 ) &ndash;&gt;&nbsp; ( 1&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;2 8 ), Swap since 5 &gt; 4<br />( 1 4&nbsp;<strong>5</strong>&nbsp;<strong>2</strong>&nbsp;8 ) &ndash;&gt;&nbsp; ( 1 4&nbsp;<strong>2</strong>&nbsp;<strong>5</strong>&nbsp;8 ), Swap since 5 &gt; 2<br />( 1 4 2&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;) &ndash;&gt; ( 1 4 2&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;), Now, since these elements are already in order (8 &gt; 5), algorithm does not swap them.</p>
 <p><strong>Second Pass:</strong><br />(&nbsp;<strong>1</strong>&nbsp;<strong>4</strong>&nbsp;2 5 8 ) &ndash;&gt; (&nbsp;<strong>1</strong>&nbsp;<strong>4</strong>&nbsp;2 5 8 )<br />( 1&nbsp;<strong>4</strong>&nbsp;<strong>2</strong>&nbsp;5 8 ) &ndash;&gt; ( 1&nbsp;<strong>2</strong>&nbsp;<strong>4</strong>&nbsp;5 8 ), Swap since 4 &gt; 2<br />( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 ) &ndash;&gt; ( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 )<br />( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;) &ndash;&gt;&nbsp; ( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;)<br />Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one&nbsp;<strong>whole</strong>&nbsp;pass without&nbsp;<strong>any</strong>&nbsp;swap to know it is sorted.</p>
 <p><strong>Third Pass:</strong><br />(&nbsp;<strong>1</strong>&nbsp;<strong>2</strong>&nbsp;4 5 8 ) &ndash;&gt; (&nbsp;<strong>1</strong>&nbsp;<strong>2</strong>&nbsp;4 5 8 )<br />( 1&nbsp;<strong>2</strong>&nbsp;<strong>4</strong>&nbsp;5 8 ) &ndash;&gt; ( 1&nbsp;<strong>2</strong>&nbsp;<strong>4</strong>&nbsp;5 8 )<br />( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 ) &ndash;&gt; ( 1 2&nbsp;<strong>4</strong>&nbsp;<strong>5</strong>&nbsp;8 )<br />( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;) &ndash;&gt; ( 1 2 4&nbsp;<strong>5</strong>&nbsp;<strong>8</strong>&nbsp;)</p>
 <p>Following is the implementations of Bubble Sort.</p>
 <p>Java:</p>
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"><code>
-  // Java program for implementation of Bubble Sort
-class BubbleSort
-{
-	void bubbleSort(int arr[])
-	{
-		int n = arr.length;
-		for (int i = 0; i &lt; n-1; i++)
-			for (int j = 0; j &lt; n-i-1; j++)
-				if (arr[j] &gt; arr[j+1])
-				{
-					// swap arr[j+1] and arr[i]
-					int temp = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = temp;
-				}
-	}
+<div>
+<pre><code>
+  // Java program for implementation of Bubble Sort 
+class BubbleSort 
+{ 
+	void bubbleSort(int arr[]) 
+	{ 
+		int n = arr.length; 
+		for (int i = 0; i &lt; n-1; i++) 
+			for (int j = 0; j &lt; n-i-1; j++) 
+				if (arr[j] &gt; arr[j+1]) 
+				{ 
+					// swap arr[j+1] and arr[i] 
+					int temp = arr[j]; 
+					arr[j] = arr[j+1]; 
+					arr[j+1] = temp; 
+				} 
+	} 
 
 	/* Prints the array */
-	void printArray(int arr[])
-	{
-		int n = arr.length;
-		for (int i=0; i&lt;n; ++i)
-			System.out.print(arr[i] + " ");
-		System.out.println();
-	}
+	void printArray(int arr[]) 
+	{ 
+		int n = arr.length; 
+		for (int i=0; i&lt;n; ++i) 
+			System.out.print(arr[i] + " "); 
+		System.out.println(); 
+	} 
 
-	// Driver method to test above
-	public static void main(String args[])
-	{
-		BubbleSort ob = new BubbleSort();
-		int arr[] = {64, 34, 25, 12, 22, 11, 90};
-		ob.bubbleSort(arr);
-		System.out.println("Sorted array");
-		ob.printArray(arr);
-	}
-}
+	// Driver method to test above 
+	public static void main(String args[]) 
+	{ 
+		BubbleSort ob = new BubbleSort(); 
+		int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+		ob.bubbleSort(arr); 
+		System.out.println("Sorted array"); 
+		ob.printArray(arr); 
+	} 
+} 
 </code></pre>
-<p>Output:</p>
+</div>
+<h4>Output:</h4>
 <div style="background-color: #f4f4f4; border-radius: 10px; padding: 10px;">
-	<p>Sorted array:</p>
-	<p>11 12 22 25 34 64 90</p>
+<p>Sorted array:</p>
+<p>11 12 22 25 34 64 90</p>
 </div>
 <p><strong>Optimized Implementation:</strong></p>
 <p>The above function always runs O(n^2) time even if the array is sorted. It can be optimized by stopping the algorithm if inner loop didn't cause any swap.</p>
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 0.5em 1.5em;display: block;word-wrap: break-word;"><code>
- // Optimized java implementation
-// of Bubble sort
-import java.io.*;
+<div><pre><code>
+ // Optimized java implementation 
+// of Bubble sort 
+import java.io.*; 
 
-class GFG
+class GFG 
 {
-<div style="background: #d0d3d4;page-break-inside: avoid;
-    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;">
-<pre style="font-family: monospace; margin:0em"><code>
-	// An optimized version of Bubble Sort
-	static void bubbleSort(int arr[], int n)
-	{
-		int i, j, temp;
-		boolean swapped;
-		for (i = 0; i < n - 1; i++)
-		{
-			swapped = false;
-			for (j = 0; j < n - i - 1; j++)
-			{
-				if (arr[j] > arr[j + 1])
-				{
-					// swap arr[j] and arr[j+1]
-					temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp;
-					swapped = true;
-				}
-			}
+	// An optimized version of Bubble Sort 
+	static void bubbleSort(int arr[], int n) 
+	{ 
+		int i, j, temp; 
+		boolean swapped; 
+		for (i = 0; i < n - 1; i++) 
+		{ 
+			swapped = false; 
+			for (j = 0; j < n - i - 1; j++) 
+			{ 
+				if (arr[j] > arr[j + 1]) 
+				{ 
+					// swap arr[j] and arr[j+1] 
+					temp = arr[j]; 
+					arr[j] = arr[j + 1]; 
+					arr[j + 1] = temp; 
+					swapped = true; 
+				} 
+			} 
 
-			// IF no two elements were
-			// swapped by inner loop, then break
-			if (swapped == false)
-				break;
-		}
-	}
-	</code></pre> </div>
-	// Function to print an array
-	static void printArray(int arr[], int size)
-	{
-		int i;
-		for (i = 0; i < size; i++)
-			System.out.print(arr[i] + " ");
-		System.out.println();
-	}
+			// IF no two elements were 
+			// swapped by inner loop, then break 
+			if (swapped == false) 
+				break; 
+		} 
+	} 
+	// Function to print an array 
+	static void printArray(int arr[], int size) 
+	{ 
+		int i; 
+		for (i = 0; i < size; i++) 
+			System.out.print(arr[i] + " "); 
+		System.out.println(); 
+	} 
 
-	// Driver program
-	public static void main(String args[])
-	{
-		int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-		int n = arr.length;
-		bubbleSort(arr, n);
-		System.out.println("Sorted array: ");
-		printArray(arr, n);
-	}
-}
-</code></pre>
+	// Driver program 
+	public static void main(String args[]) 
+	{ 
+		int arr[] = { 64, 34, 25, 12, 22, 11, 90 }; 
+		int n = arr.length; 
+		bubbleSort(arr, n); 
+		System.out.println("Sorted array: "); 
+		printArray(arr, n); 
+	} 
+} 
+
+</code></pre></div>
 <p><strong>Worst and Average Case Time Complexity:&nbsp;</strong>O(n*n). Worst case occurs when array is reverse sorted.</p>
 <p><strong>Best Case Time Complexity:</strong>&nbsp;O(n). Best case occurs when array is already sorted.</p>
 <p><strong>Auxiliary Space:</strong>&nbsp;O(1)</p>
 <p><strong>Boundary Cases:</strong>&nbsp;Bubble sort takes minimum time (Order of n) when elements are already sorted.</p>
 <p><strong>Sorting In Place:&nbsp;</strong>Yes</p>
 <p><strong>Stable:</strong>&nbsp;Yes</p>
-<p>Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.In computer graphics it is popular for its capability to detect a very small error (like swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n). For example, it is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to x axis) and with incrementing y their order changes (two elements are swapped) only at intersections of two lines</p>
+<p align="justify">Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.In computer graphics it is popular for its capability to detect a very small error (like swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n). For example, it is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to x axis) and with incrementing y their order changes (two elements are swapped) only at intersections of two lines</p>
+</body>
+</html>

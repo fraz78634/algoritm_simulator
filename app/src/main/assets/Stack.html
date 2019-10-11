@@ -1,0 +1,145 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Stack</h1>
+<p>A stack is an Abstract Data Type (ADT), commonly used in most programming languages. It is named stack as it behaves like a real-world stack, for example – a deck of cards or a pile of plates, etc.</p>
+<p>There are many real-life examples of a stack. Consider an example of plates stacked over one another in the canteen. The plate which is at the top is the first one to be removed, i.e. the plate which has been placed at the bottommost position remains in the stack for the longest period of time. So, it can be simply seen to follow LIFO(Last In First Out)/FILO(First In Last Out) order.</p>
+<p>This feature makes it LIFO data structure. LIFO stands for Last-in-first-out. Here, the element which is placed (inserted or added) last, is accessed first. In stack terminology, insertion operation is called PUSH operation and removal operation is called POP operation.</p>
+
+<h3>Stack Representation:</h3>
+<p>A stack can be implemented by means of Array, Structure, Pointer, and Linked List. Stack can either be a fixed size one or it may have a sense of dynamic resizing. Here, we are going to implement stack using arrays, which makes it a fixed size stack implementation.</p>
+<h3>Basic Operations:</h3>
+<p>Stack operations may involve initializing the stack, using it and then de-initializing it. Apart from these basic stuffs, a stack is used for the following two primary operations</p>
+<ul>
+<li> <strong>push()</strong> - Pushing (storing) an element on the stack.</li>
+<li> <strong>pop() </strong> - Removing (accessing) an element from the stack.</li>
+</ul>
+<p>To use a stack efficiently, we need to check the status of stack as well. For the same purpose, the following functionality is added to stacks</p>
+<ul>
+<li><strong>peek()</strong> - get the top data element of the stack, without removing it.</li>
+<li><strong>isfull()</strong> - check if stack is full.</li>
+<li><strong>isempty()</strong> - check if stack is empty.</li>
+</ul>
+<p>At all times, we maintain a pointer to the last PUSHed data on the stack. As this pointer always represents the top of the stack, hence named top. The top pointer provides top value of the stack without actually removing it.</p>
+<h3>Implementation Of Stack:</h3>
+<p>There are two ways to implement a stack:</p>
+<ul><li>Using array</li><li>Using linked list</li></ul>
+<h4>Implementing Stack using Arrays</h4>
+<div>
+<pre><code>
+ class Stack { 
+    static final int MAX = 1000; 
+    int top; 
+    int a[] = new int[MAX]; // Maximum size of Stack 
+  
+    boolean isEmpty() 
+    { 
+        return (top < 0); 
+    } 
+    Stack() 
+    { 
+        top = -1; 
+    } 
+  
+    boolean push(int x) 
+    { 
+        if (top >= (MAX - 1)) { 
+            System.out.println("Stack Overflow"); 
+            return false; 
+        } 
+        else { 
+            a[++top] = x; 
+            System.out.println(x + " pushed into stack"); 
+            return true; 
+        } 
+    } 
+  
+    int pop() 
+    { 
+        if (top < 0) { 
+            System.out.println("Stack Underflow"); 
+            return 0; 
+        } 
+        else { 
+            int x = a[top--]; 
+            return x; 
+        } 
+    } 
+  
+    int peek() 
+    { 
+        if (top < 0) { 
+            System.out.println("Stack Underflow"); 
+            return 0; 
+        } 
+        else { 
+            int x = a[top]; 
+            return x; 
+        } 
+    } 
+} 
+  
+// Driver code 
+class Main { 
+    public static void main(String args[]) 
+    { 
+        Stack s = new Stack(); 
+        s.push(10); 
+        s.push(20); 
+        s.push(30); 
+        System.out.println(s.pop() + " Popped from stack"); 
+    } 
+} 
+  </code></pre>
+</div>
+
+<h4>Output:</h4>
+<div>
+<pre><code>
+10 pushed into stack
+20 pushed into stack
+30 pushed into stack
+30 popped from stack
+</code></pre>
+</div>
+<p><strong> Time Complexity:</strong> push(), pop(), isEmpty() and peek() all take O(1) time. We do not run any loop in any of these operations.</p>
+
+</body>
+</html>

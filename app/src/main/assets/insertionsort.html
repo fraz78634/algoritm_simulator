@@ -1,14 +1,18 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 <style>
 body {
   display: block;
-  padding: 5px 5px;
+ padding: 5px 5px;
   border-bottom: 3px solid #f36d33;
 }
 p {
-    align:justify;
+    text-align:justify;
    
+}
+li {
+	text-align:justify;
 }
 .center {
   display: block;
@@ -16,17 +20,34 @@ p {
   margin-right: auto;
   width: 50%;
 }
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
 
 
 </style>
-<h2>Insertion Sort Algorithm</h2>
-<p align="justify">Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. The analogy can be understood from the style we arrange a deck of cards. This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.</p>
-<h3 id="working" class="panel-heading tutorial-heading">Insertion Sort works as follows:</h3>
+<h1>Insertion Sort</h1>
+<p>Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. The analogy can be understood from the style we arrange a deck of cards. This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.</p>
+<h3>Insertion Sort works as follows:</h3>
+
 <ol>
 <li>The first step involves the comparison of the element in question with its adjacent element.</li>
 <li>And if at every comparison reveals that the element in question can be inserted at a particular position, then space is created for it by shifting the other elements one position to the right and inserting the element at the suitable position.</li>
 <li>The above procedure is repeated until all the element in the array is at their apt position.</li>
 </ol>
+
 <p>Let us now understand working with the following example:</p>
 <p>Consider the following array: 25, 17, 31, 13, 2</p>
 <p><strong>First Iteration</strong>: Compare 25 with 17. The comparison shows 17&lt; 25. Hence swap 17 and 25.</p>
@@ -67,9 +88,9 @@ p {
 <p>&nbsp;</p>
 <p>Fourth Iteration</p>
 <p><img src="img/insertion-sort.png" class="center" /></p>
-<h3 id="pseudocode" class="panel-heading tutorial-heading">Pseudocode</h3>
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"><code>INSERTION-SORT(A)
+<h3>Pseudocode</h3>
+<div>
+<pre><code>INSERTION-SORT(A)
    for i = 1 to n
    	key &larr; A [i]
     	j &larr; i &ndash; 1
@@ -80,10 +101,11 @@ p {
    	A[j+1] &larr; key
   End for
   <br /></code></pre>
-<h3 id="examples" class="panel-heading tutorial-heading">Implementation:</h3>
+  </div>
+<h3>Implementation:</h3>
 <p>Following is Java implementations of Insertion Sort.</p>
-<pre style="background: #f4f4f4;border: 1px solid #ddd;border-left: 3px solid #f36d33;color: #666;page-break-inside: avoid;font-family: monospace;font-size: 10px;line-height: 1.6;margin-bottom: 1.6em;margin-left:0em;margin-right:0em;padding-left:em;
-    max-width: 100%;overflow: auto;padding: 1em 1.5em;display: block;word-wrap: break-word;"><code>// Java program for implementation of Insertion Sort
+<div>
+<pre><code>// Java program for implementation of Insertion Sort
 public class InsertionSort
 {
     /*Function to sort array using insertion sort*/
@@ -123,10 +145,11 @@ public class InsertionSort
         printArray(arr);
     }
 }<br /></code></pre>
-<h3 id="time-complexity" class="panel-heading tutorial-heading">Time Complexity Analysis:</h3>
+</div>
+<h3>Time Complexity Analysis:</h3>
 <p>Even though insertion sort is efficient, still, if we provide an already sorted array to the insertion sort algorithm, it will still execute the outer for loop, thereby requiring n steps to sort an already sorted array of n elements, which makes its best case time complexity a linear function of n.</p>
 <p>Wherein for an unsorted array, it takes for an element to compare with all the other elements which mean every n element compared with all other n elements. Thus, making it for n x n, i.e., n2 comparisons. One can also take a look at other sorting algorithms such as&nbsp;<em>Merge sort, Quick Sort, Selection Sort</em>, etc. and understand their complexities.</p>
-<p dir="ltr"><strong>Worst Case Time Complexity [ Big-O ]: O(n2)</strong></p>
+<p><strong>Worst Case Time Complexity [ Big-O ]: O(n2)</strong></p>
 <p><strong>Best Case Time Complexity [Big-omega]: O(n)</strong></p>
 <p><strong>Average Time Complexity [Big-theta]: O(n2)</strong></p>
 
