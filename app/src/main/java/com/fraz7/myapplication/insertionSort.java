@@ -23,12 +23,14 @@ import java.util.HashMap;
 import java.util.List;
 
 public class insertionSort extends AppCompatActivity {
-    private static Button button, butto2, reset_bu;
+    private static Button next_bu, pre_bu, reset_bu;
     private static ImageView imageView;
     private static TextView textView;
     private int i = 0;
-    private Handler handler = new Handler();
     Toolbar myToolbar2;
+    private boolean flag = false;
+
+    private boolean isStart=true;
     // image resource
 
     int[] images = {R.drawable.ins_1,R.drawable.ins_2,R.drawable.ins_3,R.drawable.ins_4,R.drawable.ins_5,R.drawable.ins_6,R.drawable.ins_7,
@@ -74,24 +76,28 @@ public class insertionSort extends AppCompatActivity {
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Insertion Sort");// toolbar layout file
+        myToolbar2.setTitle(R.string.insertion_sort);// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 
 
-        button = (Button) findViewById(R.id.button);
-        butto2 = (Button) findViewById(R.id.button2);
+        next_bu = (Button) findViewById(R.id.button);
+        pre_bu = (Button) findViewById(R.id.button2);
         reset_bu = (Button) findViewById(R.id.reset_bu);
         final TextView textView = (TextView) findViewById(R.id.textView);
-        butto2.setClickable(false);
+        next_bu.setClickable(true);
+        next_bu.setEnabled(true);
+        reset_bu.setClickable(true);
+        reset_bu.setEnabled(true);
+        pre_bu.setClickable(false);
 
 
         addListenerOnButton();
         setInitialImage();
         addback();
         reset();
-
+        listenForButtonStatus();
 
     }
 
@@ -119,12 +125,10 @@ public class insertionSort extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
-        button.setOnClickListener(new OnClickListener() {
+        next_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setEnabled(true);
-
-
+                next_bu.setEnabled(true);
                 if (i < resourceList.size() - 1) {
                     i++;
                     i = i % resourceList.size();
@@ -132,6 +136,7 @@ public class insertionSort extends AppCompatActivity {
 
                 }
             }
+
         });
     }
 
@@ -150,7 +155,7 @@ public class insertionSort extends AppCompatActivity {
     }
 
     public void addback() {
-        butto2.setOnClickListener(new OnClickListener() {
+        pre_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -161,7 +166,7 @@ public class insertionSort extends AppCompatActivity {
 
                     i = i % resourceList.size();
                     setCurrentImage();
-                    butto2.setClickable(true);
+                    pre_bu.setClickable(true);
 
                 }
 
@@ -180,7 +185,136 @@ public class insertionSort extends AppCompatActivity {
                 i = 0;
                 setCurrentImage();
 
+
             }
         });
+    }
+
+
+    View.OnClickListener nextBtnListner = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            next_bu.setEnabled(true);
+            isStart = true;
+            if (flag = true) {
+                if (i < resourceList.size() - 1) {
+                    listenForNextBtn(true);
+                    i++;
+                    i = i % resourceList.size();
+                    setCurrentImage();
+
+
+                }else{
+                    listenForNextBtn(false);
+
+                }
+
+            }
+            flag = false;
+
+
+
+        }
+
+
+
+    };
+
+
+    View.OnClickListener prevBtnListner=new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+
+            if (i > 0) {
+                listenForPreviousBtn(true);
+                i--;
+
+                i = i % resourceList.size();
+                setCurrentImage();
+                pre_bu.setClickable(true);
+
+            }else{
+                listenForPreviousBtn(false);
+
+            }
+
+
+        }
+
+    };
+
+
+    View.OnClickListener resetBtnListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            isStart=true;
+            listenForButtonStatus();
+            i = 0;
+            setCurrentImage();
+
+
+        }
+    };
+
+
+
+    public void listenForNextBtn(final boolean status){
+
+        if(status){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }else{
+            next_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+    public void listenForPreviousBtn(final boolean status){
+        next_bu.setOnClickListener(nextBtnListner);
+        next_bu.setBackgroundResource(R.drawable.next_button_selector);
+        if(status){
+
+            pre_bu.setOnClickListener(prevBtnListner);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+
+        }else{
+            pre_bu.setOnClickListener(null);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setOnClickListener(null);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+
+    public void listenForButtonStatus(){
+        if(isStart){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(null);
+            reset_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }else{
+            next_bu.setOnClickListener(null);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

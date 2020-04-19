@@ -22,11 +22,11 @@ public class insertionsort_stdy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_insertionsort_stdy);
+        setContentView(R.layout.activity_stdy);
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Insertion Sort");// toolbar layout file
+        myToolbar2.setTitle(R.string.insertion_sort);// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set

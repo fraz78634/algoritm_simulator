@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 public class selectionsort_stdy extends AppCompatActivity {
     Toolbar myToolbar2;
@@ -22,11 +21,11 @@ public class selectionsort_stdy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_heapsort_stdy);
+        setContentView(R.layout.activity_stdy);
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Heap Sort");// toolbar layout file
+        myToolbar2.setTitle("Selection Sort");// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set

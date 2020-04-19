@@ -1,7 +1,6 @@
 package com.fraz7.myapplication;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 public class binarysearch_stdy extends AppCompatActivity {
     Toolbar myToolbar2;
@@ -22,16 +20,16 @@ public class binarysearch_stdy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_binarysearch_stdy);
+        setContentView(R.layout.activity_stdy);
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Bubble Sort");// toolbar layout file
+        myToolbar2.setTitle(R.string.BinarySearch);// toolbar layout file
         myToolbar2.setBackgroundResource(R.color.list_color);
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 
-        String url = "file:///android_asset/bubblesort.html";
+        String url = "file:///android_asset/binarysearch.html";
         webview.loadUrl(url);
         webview.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

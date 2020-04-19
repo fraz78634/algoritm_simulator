@@ -15,6 +15,8 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.animal_tickt.view.*
+import kotlinx.android.synthetic.main.animal_tickt.view.nameView
+import kotlinx.android.synthetic.main.header_tickt.view.*
 import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
@@ -36,20 +38,18 @@ class MainActivity : AppCompatActivity() {
         listOfAnimals.add(Animal("Heap Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Selection Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Merge Sort" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Quick Sort" ,R.drawable.book,false))
         listOfAnimals.add(Animal("List Search" ,0,true))
         listOfAnimals.add(Animal("Linear Search" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Binary Search" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Jump Search",R.drawable.book,false ))
         listOfAnimals.add(Animal("Data Structure",0,true ))
         listOfAnimals.add(Animal("Arrays" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Stacks" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Queues" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Lists" ,R.drawable.book,false))
-        listOfAnimals.add(Animal("Hash Tables",R.drawable.book,false ))
         listOfAnimals.add(Animal("Heaps" ,R.drawable.book,false))
         listOfAnimals.add(Animal("Binary Search Tree" ,R.drawable.book,false))
-
+        listOfAnimals.add(Animal("Other",0,true ))
+        listOfAnimals.add(Animal("About Us",0,false ))
 
         setSupportActionBar(findViewById(R.id.tool_bar))
         val actionBar = supportActionBar
@@ -82,15 +82,20 @@ class MainActivity : AppCompatActivity() {
                      myView.nameView.setBackgroundResource(R.color.sort_color)
 
                  }
-                 if (position == 7)
+                 if (position == 6)
                  {
                      myView.nameView.setBackgroundResource(R.color.list_color)
                      //myView.nameView.setBackgroundColor(Color.parseColor("#09b693"))
                  }
-                 if (position == 11)
+                 if (position == 9)
                  {
                      myView.nameView.setBackgroundResource(R.color.datastru_color)
 
+                 }
+
+                 if (position == 16)
+                 {
+                     myView.nameView.setBackgroundResource(R.color.datastru_color)
                  }
 
                  return myView
@@ -129,88 +134,62 @@ class MainActivity : AppCompatActivity() {
                           context!!.startActivity(intent)
 
                      }
-                     if (position == 6) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
-
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
-
-                     }
-                     if (position == 8) {
+                     if (position == 7) {
 
                           val intent = Intent(context, linear_search::class.java)
                           context!!.startActivity(intent)
 
                      }
-                     if (position == 9) {
+                     if (position == 8) {
 
-                           val intent = Intent(context, binarysearch::class.java)
-                           context!!.startActivity(intent)
+                          val intent = Intent(context, binarysearch::class.java)
+                          context!!.startActivity(intent)
 
                      }
                      if (position == 10) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
+                           val intent = Intent(context, ary::class.java)
+                           context!!.startActivity(intent)
+
+                     }
+                     if (position == 11) {
+
+                          val intent = Intent(context, stack::class.java)
+                          context!!.startActivity(intent)
 
                      }
                      if (position == 12) {
 
-                          val intent = Intent(context, ary::class.java)
+                          val intent = Intent(context, queue::class.java)
                           context!!.startActivity(intent)
 
                      }
                      if (position == 13) {
 
 
-                          val intent = Intent(context, stack::class.java)
+                          val intent = Intent(context, list_ds::class.java)
                           context!!.startActivity(intent)
 
                      }
                      if (position == 14) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
+                         val intent = Intent(context, heap::class.java)
+                          context!!.startActivity(intent)
 
                      }
                      if (position == 15) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
-
-                     }
-                     if (position == 16) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
-
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
+                          val intent = Intent(context, bstree::class.java)
+                          context!!.startActivity(intent)
 
                      }
                      if (position == 17) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
-
-                     }
-                     if (position == 18) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
-
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
+                          val intent = Intent(context, aboutus::class.java)
+                          context!!.startActivity(intent)
 
                      }
-                     if (position == 18) {
-                         Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
-                         /* val intent = Intent(context, linear_search::class.java)
-                          context!!.startActivity(intent) */
-
-                     }
-                     Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
 
                  }
                  return myView

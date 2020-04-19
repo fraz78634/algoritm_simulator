@@ -1,0 +1,92 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Linear Search</h1>
+<p>Linear search is a very basic and simple search algorithm. In Linear search, we search an element or value in a given array by traversing the array from the starting, till the desired element or value is found.</p>
+<p>The time complexity of Linear search algorithm is&nbsp;<strong>O(n)</strong>, we will analyse the same and see why it is&nbsp;<strong>O(n)</strong>&nbsp;after implementing it.</p>
+<h2>Implementing Linear Search</h2>
+<p>Following are the steps of implementation that we will be following:</p>
+<ol>
+<li>Traverse the array using a for loop.</li>
+<li>In every iteration, compare the target value with the current value of the array.
+<ul>
+<li>If the values match, return the current index of the array.</li>
+<li>If the values do not match, move on to the next array element.</li>
+</ul>
+</li>
+<li>If no match is found, return -1.</li>
+</ol>
+<p>To search the number&nbsp;<strong>5</strong>&nbsp;in the array given below, linear search will go step by step in a sequential order starting from the first element in the given array.</p>
+<div>
+<pre><code>/* 
+    below we have implemented a simple function 
+    for linear search in C
+    
+    - values[] =&gt; array with all the values
+    - target =&gt; value to be found
+    - n =&gt; total number of elements in the array
+*/
+int linearSearch(int values[], int target, int n)
+{
+    for(int i = 0; i &lt; n; i++)
+    {
+        if (values[i] == target) 
+        {       
+            return i; 
+        }
+    }
+    return -1;
+}
+</code></pre>
+</div>
+<h3>Some Examples with Inputs</h3>
+<div>
+<pre><code>
+Input: values[] = {5, 34, 65, 12, 77, 35}
+target = 77
+Output: 4
+Input: values[] = {101, 392, 1, 54, 32, 22, 90, 93}
+target = 200
+Output: -1 (not found)
+</code></pre>
+<div>
+
+</body>
+</html>

@@ -26,12 +26,12 @@ public class linearsearch_stdy extends AppCompatActivity {
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Linear Search");// toolbar layout file
+        myToolbar2.setTitle(R.string.linearSearch);// toolbar layout file
         myToolbar2.setBackgroundResource(R.color.list_color);
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 
-        String url = "file:///android_asset/bubblesort.html";
+        String url = "file:///android_asset/linearsearch.html";
         webview.loadUrl(url);
         webview.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

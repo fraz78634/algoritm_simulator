@@ -1,0 +1,152 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Binary Search</h1>
+<p>Binary Search is applied on the sorted array or list of large size. It's time complexity of&nbsp;<strong>O(log n)</strong>&nbsp;makes it very fast as compared to other sorting algorithms. The only limitation is that the array or list of elements must be sorted for the binary search algorithm to work on it.</p>
+<h2>Implementation</h2>
+<p>Following are the steps of implementation that we will be following:</p>
+<ol>
+<li>Start with the middle element:
+<ul>
+<li>If the target value is equal to the middle element of the array, then return the index of the middle element.</li>
+<li>If not, then compare the middle element with the target value,
+<ul>
+<li>If the target value is greater than the number in the middle index, then pick the elements to the right of the middle index, and start with Step 1.</li>
+<li>If the target value is less than the number in the middle index, then pick the elements to the left of the middle index, and start with Step 1.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When a match is found, return the index of the element matched.</li>
+<li>If no match is found, then return -1</li>
+</ol>
+<div>
+<pre><code>
+  /*
+    function for carrying out binary search on given array
+    - values[] =&gt; given sorted array
+    - len =&gt; length of the array
+    - target =&gt; value to be searched
+*/
+int binarySearch(int values[], int len, int target)
+{
+    int max = (len - 1);
+    int min = 0;
+    
+    int guess;  // this will hold the index of middle elements
+    int step = 0;  // to find out in how many steps we completed the search
+    
+    while(max &gt;= min)
+    {
+        guess = (max + min) / 2;
+        // we made the first guess, incrementing step by 1
+        step++;
+        
+        if(values[guess] ==  target)
+        {
+            printf("Number of steps required for search: %d \n", step);
+            return guess;
+        }
+        else if(values[guess] &gt;  target) 
+        {
+            // target would be in the left half
+            max = (guess - 1);
+        }
+        else
+        {
+            // target would be in the right half
+            min = (guess + 1);
+        }
+    }
+ 
+    // We reach here when element is not 
+    // present in array
+    return -1;
+}
+ 
+int main(void)
+{
+    int values[] = {13, 21, 54, 81, 90};
+    int n = sizeof(values) / sizeof(values[0]);
+    int target = 81;
+    int result = binarySearch(values, n, target);
+    if(result == -1)
+    {  
+        printf("Element is not present in the given array.");
+    }
+    else
+    {
+        printf("Element is present at index: %d", result);
+    }
+    return 0;
+}
+</code></pre></div>
+<p>Now let's try to understand, why is the time complexity of binary search O(log n) and how can we calculate the number of steps required to search an element from a given array using binary search without doing any calculations. It's super easy! Are you ready?</p>
+<h2>Time Complexity<strong> O(log n)</strong></h2>
+<p>When we say the time complexity is log n, we actually mean log2 n, although the base of the log doesn't matter in asymptotic notations, but still to understand this better, we generally consider a base of 2.</p>
+<p>Let's first understand what&nbsp;<strong>log<sub>2</sub>(n)</strong>&nbsp;means.</p>
+<div>
+<pre><code>
+Expression: log2(n)
+- - - - - - - - - - - - - - -
+For n = 2:
+log2(21) = 1
+Output = 1
+- - - - - - - - - - - - - - -
+For n = 4
+log2(22) = 2
+Output = 2
+- - - - - - - - - - - - - - -
+For n = 8
+log2(23) = 3
+Output = 3
+- - - - - - - - - - - - - - -
+For n = 256
+log2(28) = 8
+Output = 8
+- - - - - - - - - - - - - - -
+For n = 2048
+log2(211) = 11
+Output = 11
+</code></pre></div>
+<p>Now that we know how log2(n) works with different values of n, it will be easier for us to relate it with the time complexity of the binary search algorithm and also to understand how we can find out the number of steps required to search any number using binary search for any value of n.</p>
+
+</body>
+</html>

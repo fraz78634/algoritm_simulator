@@ -29,6 +29,8 @@ public class busort extends AppCompatActivity {
     private int i = 0;
     Toolbar myToolbar2;
     private boolean flag = false;
+
+    private boolean isStart=true;
     // image resource
 
     List<BSortResource> resourceList = new ArrayList<BSortResource>() {{
@@ -99,7 +101,7 @@ public class busort extends AppCompatActivity {
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Bubble Sort");// toolbar layout file
+        myToolbar2.setTitle(R.string.bubble_sort);// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
@@ -119,7 +121,7 @@ public class busort extends AppCompatActivity {
         setInitialImage();
         addback();
         reset();
-
+        listenForButtonStatus();
 
     }
 
@@ -151,27 +153,13 @@ public class busort extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 next_bu.setEnabled(true);
-
-                if (flag = true) {
-                    if (i < resourceList.size() - 1) {
-                        i++;
-                        i = i % resourceList.size();
-                        setCurrentImage();
-
-
-                    }
-                   /* else {
-                       // next_bu.setClickable(false);
-                        next_bu.setEnabled(false);
-                        next_bu.setBackgroundResource(R.color.bu_disable);
-                    } */
+                if (i < resourceList.size() - 1) {
+                    i++;
+                    i = i % resourceList.size();
+                    setCurrentImage();
 
                 }
-                flag = false;
-
             }
-
-
 
         });
     }
@@ -222,7 +210,135 @@ public class busort extends AppCompatActivity {
                 setCurrentImage();
 
 
-                            }
+            }
         });
+    }
+
+
+    View.OnClickListener nextBtnListner = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            next_bu.setEnabled(true);
+            isStart = true;
+            if (flag = true) {
+                if (i < resourceList.size() - 1) {
+                    listenForNextBtn(true);
+                    i++;
+                    i = i % resourceList.size();
+                    setCurrentImage();
+
+
+                }else{
+                    listenForNextBtn(false);
+
+                }
+
+            }
+            flag = false;
+
+
+
+        }
+
+
+
+    };
+
+
+    View.OnClickListener prevBtnListner=new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+
+            if (i > 0) {
+                listenForPreviousBtn(true);
+                i--;
+
+                i = i % resourceList.size();
+                setCurrentImage();
+                pre_bu.setClickable(true);
+
+            }else{
+                listenForPreviousBtn(false);
+
+            }
+
+
+        }
+
+    };
+
+
+    View.OnClickListener resetBtnListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            isStart=true;
+            listenForButtonStatus();
+            i = 0;
+            setCurrentImage();
+
+
+        }
+    };
+
+
+
+    public void listenForNextBtn(final boolean status){
+
+        if(status){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }else{
+            next_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+    public void listenForPreviousBtn(final boolean status){
+        next_bu.setOnClickListener(nextBtnListner);
+        next_bu.setBackgroundResource(R.drawable.next_button_selector);
+        if(status){
+
+            pre_bu.setOnClickListener(prevBtnListner);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+
+        }else{
+            pre_bu.setOnClickListener(null);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setOnClickListener(null);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+
+    public void listenForButtonStatus(){
+        if(isStart){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(null);
+            reset_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }else{
+            next_bu.setOnClickListener(null);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

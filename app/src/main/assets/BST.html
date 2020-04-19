@@ -1,0 +1,101 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+
+<h1 class="h1">Binary Search Tree</h1>
+<p>A&nbsp;<strong>binary search tree</strong>&nbsp;is a binary tree where each node contains a value from a well-ordered set.</p>
+<p>For&nbsp;<strong>each node</strong>&nbsp;n&nbsp;in a binary search tree the following invariants&nbsp;hold.</p>
+<ol>
+<li>Every node in the left subtree of n contains a value which is smaller than the value in the node n.</li>
+<li>Every node in the right subtree of n contains a value which is larger than the value in the node n.</li>
+</ol>
+<h3>Balanced trees with O(log n)</h3>
+<p>We say that a tree is&nbsp;<strong>well-balanced</strong>&nbsp;if each node in the tree has two subtrees with roughly the same number of nodes. It&rsquo;s possible to show that a well-balanced tree with&nbsp;<em>n</em>&nbsp;nodes has depth&nbsp;<em>O</em>(log&nbsp;<em>n</em>).</p>
+<p>If we can manage to keep a binary search tree well-balanced, we get an&nbsp;<strong>ordered</strong>&nbsp;data structure with&nbsp;<em>O</em>(log&nbsp;<em>n</em>) worst-case time complexity for all basic operations: lookup, addition and removal.</p>
+<p>In this text we are presenting pseudocode for some basic operations on unbalanced binary search trees.</p>
+<h2 id="tree-algorithms">Tree algorithms</h2>
+<p>An&nbsp;<strong>inorder</strong>&nbsp;traversal of a binary search tree visits the nodes in sorted order.</p>
+<div>
+<pre><code>
+// Visit all nodes of a binary search tree in sorted order.
+Algorithm inorder(root)
+    if root is empty
+        // do nothing
+    else
+        inorder(root.left)
+        // do something with root
+        inorder(root.right)
+</code></pre>
+</div>
+<h3>Search</h3>
+<p>It&rsquo;s pretty straightforward to implement the find operation in a binary search tree with iteration, but to keep things simple, here is a recursive version.</p>
+<div>
+<pre><code>
+// Returns true if the value is found in the tree.
+Algorithm find(value, root)
+    if root is empty
+        return false
+    if value = root.value
+        return true
+    if value &lt; root.value
+        return find(value, root.left)    
+    else
+        return find(value, root.right)
+</code></pre>
+</div>
+<h3>Insert</h3>
+<p>To implement an algorithm that changes the structure of a tree, it&rsquo;s convenient to define a function that takes the root of the old tree as input, and returns the root of new updated tree.</p>
+<div>
+<pre><code>
+// Adds a new node and returns the root of the updated tree.
+Algorithm insert(node, root)
+    if root is empty
+        return node
+    if node.value = root.value
+        // do nothing, element already in tree
+    else if node.value &lt; root.value
+        root.left &larr; insert(node, root.left)
+    else
+        root.right &larr; insert(node, root.right)
+    return root
+</code></pre>
+</div>
+</body>
+</html>

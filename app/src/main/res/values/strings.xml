@@ -5,7 +5,20 @@
     <string name="baboon">Baboon</string>
     <string name="description">description</string>
     <string name="todo">TODO</string>
+    <!-- activity names -->
     <string name="bubble_sort">Bubble Sort</string>
+    <string name="insertion_sort">Insertion Sort</string>
+    <string name="heap_sort">Heap Sort</string>
+    <string name="array">Array</string>
+    <string name="queue">Queue</string>
+    <string name="stack">Stack</string>
+    <string name="list">Lists</string>
+    <string name="mergeSort">Merge Sort</string>
+    <string name="linearSearch">Linear Search</string>
+    <string name="BinarySearch">Binary Search</string>
+    <string name="heap">Heap</string>
+    <string name="bst">Binary Search Tree</string>
+    <!-- Buttons name -->
     <string name="next_bu">next_bu</string>
     <string name="pre_bu">pre_bu</string>
     <string name="next">Next</string>
@@ -16,6 +29,7 @@
     <string name="study">study</string>
     <string name="button">button</string>
     <string name="title_activity_welcome_screen">welcome_screen</string>
+    <string name="copy_right" translatable="false">Copyrights © %1$d</string>
 
 
     <!--strings for busort -->
@@ -99,20 +113,150 @@
     <string name="mer16">This concludes the explanation of merge sort.</string>
 
     <!-- selection sort -->
-    <string name="sel1"></string>
-
-
+    <string name="sel1">Selection sort is one algorithm used to sort a sequence of numbers.</string>
+    <string name="sel2">Using linear search, the smallest value in the  sequence is located. In this case 1 is smallest number in sequence.</string>
+    <string name="sel3">The smallest value swaps with the leftmost number and is considered fully sorted</string>
+    <string name="sel4">If the smallest value happens to already be in the leftmost position, no operation is carried out.</string>
+    <string name="sel5">The same operations are repeated until all of the numbers are fully sorted.</string>
+    <string name="sel6">Here, 5 is smallest number and located on leftmost position.</string>
+    <string name="sel7">5 is the smallest number located on leftmost position. So no operation happened.</string>
+    <string name="sel8">Again the same operations are repeated until all of the numbers are fully sorted.</string>
+    <string name="sel9">Now sorting is completed.</string>
 
 
     <!-- linear search -->
-    <string name="lin1"></string>
+    <string name="lin1">Linear search is an algorithm for searching through elements of an array.</string>
+    <string name="lin2">Lets try searching for the number</string>
+    <string name="lin3">First, we examine the leftmost number in the array.</string>
+    <string name="lin4">We compare it with 9, and if it matches, the search ends. If does not match, we examine the next number to the right.</string>
+    <string name="lin5">We repeat the comparisons until the 9 is found</string>
+    <string name="lin6">We found the number 9, so the search ends.</string>
+    <string name="lin7">Linear search is a simple technique for doing repeated comparisons in order from the beginning.</string>
+    <string name="lin8">When there is a lot of data, the number of comparisons increases, and it takes more time.</string>
 
 
     <!-- binary search -->
-    <string name="bin1"></string>
+    <string name="bin1">Binary search is an algorithm for searching through elements of a presorted array.</string>
+    <string name="bin10">6 = 6, so we found the number we were looking for.</string>
+    <string name="bin11">In this way, we see that binary search makes use of a presorted array and continuously halves the numbers to search through, allowing it to search for numbers efficiently.</string>
+    <string name="bin2">Lets try searching for the number 6</string>
+    <string name="bin3">First, we look at the number in the center of the array. In this case it\'s 5.</string>
+    <string name="bin4">We compare 5 to the number 6 that we are searching for. Because 5 is less than 6, we know the number 6 is to the right of number 5.</string>
+    <string name="bin5">From the candidates, we remove numbers that are no longer needed.</string>
+    <string name="bin6">Again we look at the number in the the center of the remaining array. The this time it\'s number 7.</string>
+    <string name="bin7">We compare 7 to 6. Because 6 is less than 7, we know that the number 6 is to the left of 7.</string>
+    <string name="bin8">From the candidates, we remove numbers that are no longer needed.</string>
+    <string name="bin9">We look at the number in the center of the remaining array. This time it\'s 6.</string>
 
     <!-- array -->
-    <string name="arry1"></string>
+    <string name="arry1">Arrays are type of data structure and can store multiple values.</string>
+    <string name="arry2">Each element can be accessed through its index.</string>
+    <string name="arry3">Data is stored sequentially in memory in consecutive locations as shown above.</string>
+    <string name="arry4">Because they are stored in consecutive locations, memory addresses can be calculated using their indices, allowing for random access of data.</string>
+    <string name="arry5">Adding and deleting data is another feature of arrays carries a high cost compared to lists.</string>
+    <string name="arry6">Lets imagine adding Green to 3rd location.</string>
+    <string name="arry7">First we secure an additional space at the end of the array.</string>
+    <string name="arry8">In order to free up the space needed for the addition, data is shifted one element at a time.</string>
+    <string name="arry9">Green is added to the empty space, completing the addition.</string>
+    <string name="arry10">When deleting the second element, we first delete the element,</string>
+    <string name="arry11">then fill the empty space by shifting the data one element at a time.</string>
+    <string name="arry12">Finally, the extra space is deleted, completing the deletion.</string>
+    <string name="arry13">This concludes the explanation of arrays</string>
 
+    <!-- Stack -->
+    <string name="stc1">Stacks are one type of data structure.</string>
+    <string name="stc2">The structure of a stack can be easily imagined as a pile of objects stacked vertically.</string>
+    <string name="stc3">We use the term \"push\" to refer to the act of adding data to a stack.</string>
+    <string name="stc4">We use the term \"pop\" to refer to the act of extracting data from a stack.</string>
+    <string name="stc5">When adding data to a stack, the data is put into the lowest available location.</string>
+    <string name="stc6">When extracting data from a stack, the most recently added data is removed first.</string>
+    <string name="stc7">This method of extracting the most recently added data first is called Last in First Out, or LIFO</string>
 
+    <!-- Queue -->
+    <string name="qu1">Queues are one type of data structure.</string>
+    <string name="qu2">Queues are also known as waiting lines, and as the same name suggests, they can be easily imagined as a group of people waiting in line</string>
+    <string name="qu3">In queues, the sooner a person lines up, the higher their priority.</string>
+    <string name="qu4">When adding data to a queue, the data is placed at the end.</string>
+    <string name="qu5">We use the term \"enqueue\" to refer to the act of adding data to a queue.</string>
+    <string name="qu6">We use the term \"dequeue\" to refer to the act of extracting data from a queue.</string>
+    <string name="qu7">When extracting data from a queue, the data that\'s been in the queue the longest is removed first.</string>
+    <string name="qu8">This method of extracting the initially added data first is called First In First Out, or FIFO for short.</string>
+    <string name="qu9">This concludes the explanation of queues.</string>
+
+    <!-- List -->
+    <string name="lst1">Lists are type of data structure and can store multiple values.</string>
+    <string name="lst2">They are unique in how they pair data with pointers, the pointers indicating the next piece of data\'s memory location</string>
+    <string name="lst3">In lists, data is stored in various disjointed locations in memory.</string>
+    <string name="lst4">Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.</string>
+    <string name="lst5">Addition of data is performed simply by replacing the pointers on either side of the addition.</string>
+    <string name="lst6">To add new node at second position in list first create new node and create link with second node.</string>
+    <string name="lst7">Head is linked with the node adding in list.</string>
+    <string name="lst8">We are going to delete 1st node from the above list. Firstly, we will point the 2nd node as head.</string>
+    <string name="lst9">Now delete the node.</string>
+    <string name="lst10">This concludes the explanation of lists.</string>
+    <!-- heap -->
+    <string name="hp1">Heaps are one type of tree data structure, and are used when implementing a priority queue.</string>
+    <string name="hp10">This operation is repeated until no additional swaps occur.</string>
+    <string name="hp11">the parent 1 is less than the child 5, so since the parent is smaller,no swap occurs.</string>
+    <string name="hp12">The addition of number 5 is now completed.</string>
+    <string name="hp13">When extracting a number from a heap, the number on the top is removed.</string>
+    <string name="hp14">In a heap, the smallest value is held in the top location.</string>
+    <string name="hp15">Because the top number was removed, the heap\'s structure needs to be reorganized.</string>
+    <string name="hp16">The number at the end of the line moves to the top.</string>
+    <string name="hp17">When one of the child number is less than the parent, the lowest of the adjacent child numbers swap with the parent.</string>
+    <string name="hp18">The parent 6 was greater than the child to the right 5 which was in turn greater than the child to the left 3, so the left child and parent swapped.</string>
+    <string name="hp19">The right child 8 was greater than the parent 6 which was in turn greater than the child to the left 4, so the left child and parent swapped.</string>
+    <string name="hp2">A priority queue is one type of data structure.</string>
+    <string name="hp20">The extraction of a number from the heap is now completed.</string>
+    <string name="hp21">In this way, heaps can be used to quickly extract the smallest data.</string>
+    <string name="hp22">However, extraction of data in the middle of the tree cannot be performed.</string>
+    <string name="hp23">This concludes the explanation of heaps..</string>
+    <string name="hp3">In a priority queue, data can be added in any order.</string>
+    <string name="hp4">Conversely, when extracting data, the smallest values are chosen first.Being able to freely add data and then extract the smallest values first defines a priority queue.</string>
+    <string name="hp5">As a rule of heaps, a child number is always greater than its parent number.</string>
+    <string name="hp6">Let\'s try adding a number to the heap.</string>
+    <string name="hp7">The number that\'s added is first placed onto the end of the line.</string>
+    <string name="hp8">If the parent number happens to be greater, the child and parent swaps.</string>
+    <string name="hp9">Since the parent 6 is greater than the child 5 the two numbers swap.</string>
+
+    <!-- Binary search tree -->
+    <string name="bst1">Binary search trees are one type of data structure.</string>
+    <string name="bst10">Let\'s take a look at the process of adding nodes to a binary search bste.</string>
+    <string name="bst11">As an example, we\'ll try adding a 2.</string>
+    <string name="bst12">We start at the topmost node of the binary search bste in order to find the additional nodes\'s proper location..</string>
+    <string name="bst13">2 is less than 8, so it proceeds to left.</string>
+    <string name="bst14">2 is less than 3, so it proceeds to left.</string>
+    <string name="bst15">2 is greater than 1, so it proceeds to right, but since there isn\'t node to move to, the 2 is added as a new node.</string>
+    <string name="bst16">The addition of the 2 is now completed.</string>
+    <string name="bst17">Now let\'s look at the process for deleting nodes from binary search bste.</string>
+    <string name="bst18">Let\'s try deleting the 13.</string>
+    <string name="bst19">When the node has no children, the the target node is simply deleted and the process is completed.</string>
+    <string name="bst2">The numbered points are called nodes.</string>
+    <string name="bst20">Let\'s try deleting the 3.</string>
+    <string name="bst21">When deleting a node that has two children..</string>
+    <string name="bst22">first we delete the target node..</string>
+    <string name="bst23">and from the deleted node\'s children 7 is largest move it to the deleted node\'s location.</string>
+    <string name="bst24">Let\'s try deleting the 6.</string>
+    <string name="bst25">When deleting a node that has two children first we delete the target node.</string>
+    <string name="bst26">and from the deleted node\'s left subbste we find the largest node..</string>
+    <string name="bst27">and move it to the deleted node\'s location.</string>
+    <string name="bst28">By doing this, we were able to delete a node while preserving the integrity of the binary search bste.</string>
+    <string name="bst29">Furthermore, if the node that was removed also had its own child nodes, the same process is repeated recursively.</string>
+    <string name="bst3">Binary search bstes have two properties.</string>
+    <string name="bst30">Also, while we used the largest node from the left subbste this time, using the smallest node from the right subbste works as well.</string>
+    <string name="bst31">As an example, let\'s try searching for the 14.</string>
+    <string name="bst32">We start our search at the topmost node the binary search bste.</string>
+    <string name="bst33">14 is greater than 8, so we proceed to the right.</string>
+    <string name="bst34">14 is greater than 10, so we proceed to the right.</string>
+    <string name="bst35">We found the 14.</string>
+    <string name="bst36">As you can see, we are able to search efficiently using binary search bste.</string>
+    <string name="bst37">However, if the bste gets close to forming a straight line, its search efficiency becomes exbstmely poor, like a linear search.</string>
+    <string name="bst38">On the other hand, binary search bste that are always well-balanced, called self-balancing\10        binary search bste, are able to maintain search efficiency.</string>
+    <string name="bst39">This concludes the explanation of binary search bstes.</string>
+    <string name="bst4">Their first property is that all nodes are greater than the nodes in their left subbste.</string>
+    <string name="bst5">For example, node 3 is greater than the other number in its left subbste.</string>
+    <string name="bst6">Likewise, node 8 is greater than the other numbers in its left subbste.</string>
+    <string name="bst7">On the contrary, their second property is that all nodes are smaller than the nodes in their right subbste.</string>
+    <string name="bst8">For example, node 8 is smaller than the other numbers in its right subbste.</string>
+    <string name="bst9">Because of these two properties, this bste holds true.</string>
 </resources>

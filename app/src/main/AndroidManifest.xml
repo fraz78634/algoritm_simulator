@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.fraz7.myapplication">
+        package="com.fraz7.myapplication">
 
     <application
             android:allowBackup="true"
@@ -9,78 +9,73 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".stack">
-        </activity>
-        <activity android:name=".array_stdy">
-        </activity>
-        <activity android:name=".merge_sort">
-        </activity>
-        <activity android:name=".ary">
-        </activity>
-        <activity android:name=".binarysearch_stdy">
-        </activity>
-        <activity android:name=".binarysearch">
-        </activity>
-        <activity android:name=".linearsearch_stdy">
-        </activity>
+        <activity android:name=".bstree_std"></activity>
+        <activity android:name=".bstree" />
+        <activity android:name=".heap_std" />
+        <activity android:name=".heap" />
+        <activity android:name=".stack_std" />
+        <activity android:name=".list_ds" />
+        <activity android:name=".list_std" />
+        <activity android:name=".queue_stdy" />
+        <activity android:name=".queue" />
+        <activity android:name=".mergesort_std" />
+        <activity android:name=".aboutus" />
+        <activity android:name=".aboutUs" />
+        <activity android:name=".stack" />
+        <activity android:name=".array_stdy" />
+        <activity android:name=".merge_sort" />
+        <activity android:name=".ary" />
+        <activity android:name=".binarysearch_stdy" />
+        <activity android:name=".binarysearch" />
+        <activity android:name=".linearsearch_stdy" />
         <activity
                 android:name=".linear_search"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".selectionsort_stdy"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".selectionSort">
-        </activity>
+                android:screenOrientation="portrait" />
+        <activity android:name=".selectionSort" />
         <activity
                 android:name=".heapsort_stdy"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".heapSort"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".insertionsort_stdy"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".bubblesortStudy"
                 android:configChanges="orientation|keyboardHidden"
                 android:parentActivityName=".MainActivity"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".insertionSort"
                 android:configChanges="orientation|keyboardHidden"
                 android:parentActivityName=".MainActivity"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".busort"
                 android:configChanges="orientation|keyboardHidden"
                 android:parentActivityName=".MainActivity"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".MainActivity"
                 android:configChanges="orientation|keyboardHidden"
-                android:screenOrientation="portrait">
-        </activity>
+                android:screenOrientation="portrait" />
         <activity
                 android:name=".welcome_screen"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

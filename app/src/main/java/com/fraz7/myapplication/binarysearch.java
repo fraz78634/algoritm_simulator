@@ -23,27 +23,30 @@ import java.util.HashMap;
 import java.util.List;
 
 public class binarysearch extends AppCompatActivity {
-    private static Button button, butto2, reset_bu;
+    private static Button next_bu, pre_bu, reset_bu;
     private static ImageView imageView;
     private static TextView textView;
     private int i = 0;
-    private Handler handler = new Handler();
     Toolbar myToolbar2;
+    private boolean flag = false;
+
+    private boolean isStart=true;
     // image resource
 
   //  int[] images = {R.drawable.bin_1,};
 
     List<BSortResource> resourceList = new ArrayList<BSortResource>() {{
         add(new BSortResource(R.drawable.bin_1, R.string.bin1));
-        add(new BSortResource(R.drawable.bin_2,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_3,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_4,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_5,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_6,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_7,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_8,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_9,  R.string.bin1));
-        add(new BSortResource(R.drawable.bin_10,  R.string.bin1));
+        add(new BSortResource(R.drawable.bin_2,  R.string.bin2));
+        add(new BSortResource(R.drawable.bin_3,  R.string.bin3));
+        add(new BSortResource(R.drawable.bin_4,  R.string.bin4));
+        add(new BSortResource(R.drawable.bin_5,  R.string.bin5));
+        add(new BSortResource(R.drawable.bin_6,  R.string.bin6));
+        add(new BSortResource(R.drawable.bin_7,  R.string.bin7));
+        add(new BSortResource(R.drawable.bin_8,  R.string.bin8));
+        add(new BSortResource(R.drawable.bin_9,  R.string.bin9));
+        add(new BSortResource(R.drawable.bin_10,  R.string.bin10));
+        add(new BSortResource(R.drawable.bin_10,  R.string.bin11));
 
 
 
@@ -59,24 +62,28 @@ public class binarysearch extends AppCompatActivity {
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Binary Search");// toolbar layout file
+        myToolbar2.setTitle(R.string.BinarySearch);// toolbar layout file
         myToolbar2.setBackgroundResource(R.color.list_color);
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
 
 
-        button = (Button) findViewById(R.id.button);
-        butto2 = (Button) findViewById(R.id.button2);
+        next_bu = (Button) findViewById(R.id.button);
+        pre_bu = (Button) findViewById(R.id.button2);
         reset_bu = (Button) findViewById(R.id.reset_bu);
         final TextView textView = (TextView) findViewById(R.id.textView);
-        butto2.setClickable(false);
+        next_bu.setClickable(true);
+        next_bu.setEnabled(true);
+        reset_bu.setClickable(true);
+        reset_bu.setEnabled(true);
+        pre_bu.setClickable(false);
 
 
         addListenerOnButton();
         setInitialImage();
         addback();
         reset();
-
+        listenForButtonStatus();
 
     }
 
@@ -97,19 +104,17 @@ public class binarysearch extends AppCompatActivity {
         }
         if (id == R.id.studdy)
         {
-            Intent i = new Intent(this, insertionsort_stdy.class);
+            Intent i = new Intent(this, binarysearch_stdy.class);
             startActivity(i);
         }
         return true;
     }
 
     public void addListenerOnButton() {
-        button.setOnClickListener(new OnClickListener() {
+        next_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setEnabled(true);
-
-
+                next_bu.setEnabled(true);
                 if (i < resourceList.size() - 1) {
                     i++;
                     i = i % resourceList.size();
@@ -117,6 +122,7 @@ public class binarysearch extends AppCompatActivity {
 
                 }
             }
+
         });
     }
 
@@ -135,7 +141,7 @@ public class binarysearch extends AppCompatActivity {
     }
 
     public void addback() {
-        butto2.setOnClickListener(new OnClickListener() {
+        pre_bu.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -146,7 +152,7 @@ public class binarysearch extends AppCompatActivity {
 
                     i = i % resourceList.size();
                     setCurrentImage();
-                    butto2.setClickable(true);
+                    pre_bu.setClickable(true);
 
                 }
 
@@ -165,7 +171,136 @@ public class binarysearch extends AppCompatActivity {
                 i = 0;
                 setCurrentImage();
 
+
             }
         });
+    }
+
+
+    View.OnClickListener nextBtnListner = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            next_bu.setEnabled(true);
+            isStart = true;
+            if (flag = true) {
+                if (i < resourceList.size() - 1) {
+                    listenForNextBtn(true);
+                    i++;
+                    i = i % resourceList.size();
+                    setCurrentImage();
+
+
+                }else{
+                    listenForNextBtn(false);
+
+                }
+
+            }
+            flag = false;
+
+
+
+        }
+
+
+
+    };
+
+
+    View.OnClickListener prevBtnListner=new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+
+            if (i > 0) {
+                listenForPreviousBtn(true);
+                i--;
+
+                i = i % resourceList.size();
+                setCurrentImage();
+                pre_bu.setClickable(true);
+
+            }else{
+                listenForPreviousBtn(false);
+
+            }
+
+
+        }
+
+    };
+
+
+    View.OnClickListener resetBtnListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            isStart=true;
+            listenForButtonStatus();
+            i = 0;
+            setCurrentImage();
+
+
+        }
+    };
+
+
+
+    public void listenForNextBtn(final boolean status){
+
+        if(status){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }else{
+            next_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+    public void listenForPreviousBtn(final boolean status){
+        next_bu.setOnClickListener(nextBtnListner);
+        next_bu.setBackgroundResource(R.drawable.next_button_selector);
+        if(status){
+
+            pre_bu.setOnClickListener(prevBtnListner);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+
+        }else{
+            pre_bu.setOnClickListener(null);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setOnClickListener(null);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }
+
+    }
+
+
+    public void listenForButtonStatus(){
+        if(isStart){
+            next_bu.setOnClickListener(nextBtnListner);
+            pre_bu.setOnClickListener(null);
+            reset_bu.setOnClickListener(null);
+            next_bu.setBackgroundResource(R.drawable.next_button_selector);
+            pre_bu.setBackgroundResource(R.drawable.disabled_bu);
+            reset_bu.setBackgroundResource(R.drawable.disabled_bu);
+        }else{
+            next_bu.setOnClickListener(null);
+            pre_bu.setOnClickListener(prevBtnListner);
+            reset_bu.setOnClickListener(resetBtnListener);
+
+            next_bu.setBackgroundResource(R.drawable.disabled_bu);
+            pre_bu.setBackgroundResource(R.drawable.pre_bu_selector);
+            reset_bu.setBackgroundResource(R.drawable.reset_bu_selector);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

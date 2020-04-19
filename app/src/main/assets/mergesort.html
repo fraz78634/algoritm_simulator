@@ -1,0 +1,165 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Merge Sort</h1>
+<p>Merge Sort follows the rule of&nbsp;<strong>Divide and Conquer</strong>&nbsp;to sort a given set of numbers/elements, recursively, hence consuming less time.</p>
+<p>Before jumping on to, how merge sort works and it's implementation, first lets understand what is the rule of&nbsp;<strong>Divide and Conquer</strong>?</p>
+<h2>Divide and Conquer</h2>
+<p>If we can break a single big problem into smaller sub-problems, solve the smaller sub-problems and combine their solutions to find the solution for the original big problem, it becomes easier to solve the whole problem.</p>
+<p>Let's take an example,&nbsp;<strong>Divide and Rule</strong>.</p>
+<p>When Britishers came to India, they saw a country with different religions living in harmony, hard working but naive citizens, unity in diversity, and found it difficult to establish their empire. So, they adopted the policy of&nbsp;<strong>Divide and Rule</strong>. Where the population of India was collectively a one big problem for them, they divided the problem into smaller problems, by instigating rivalries between local kings, making them stand against each other, and this worked very well for them.</p>
+<p>Well that was history, and a socio-political policy (<strong>Divide and Rule</strong>), but the idea here is, if we can somehow divide a problem into smaller sub-problems, it becomes easier to eventually solve the whole problem.</p>
+<p>In&nbsp;<strong>Merge Sort</strong>, the given unsorted array with&nbsp;n&nbsp;elements, is divided into&nbsp;n&nbsp;subarrays, each having&nbsp;<strong>one</strong>&nbsp;element, because a single element is always sorted in itself. Then, it repeatedly merges these subarrays, to produce new sorted subarrays, and in the end, one complete sorted array is produced.</p>
+<p>The concept of Divide and Conquer involves three steps:</p>
+<ol>
+<li>Divide the problem into multiple small problems.</li>
+<li>Conquer the subproblems by solving them. The idea is to break down the problem into atomic subproblems, where they are actually solved.</li>
+<li>Combine the solutions of the subproblems to find the solution of the actual problem.</li>
+</ol>
+<h2>Implementation</h2>
+<p>Below we have a C program implementing merge sort algorithm.</p>
+<div>
+<pre> <code>
+ /*  
+    a[] is the array, p is starting index, that is 0, 
+    and r is the last index of array. 
+*/
+
+#include 
+
+// lets take a[5] = {32, 45, 67, 2, 7} as the array to be sorted.
+
+// merge sort function
+void mergeSort(int a[], int p, int r)
+{
+    int q;
+    if(p &lt; r)
+    {
+        q = (p + r) / 2;
+        mergeSort(a, p, q);
+        mergeSort(a, q+1, r);
+        merge(a, p, q, r);
+    }
+}
+
+// function to merge the subarrays
+void merge(int a[], int p, int q, int r)
+{
+    int b[5];   //same size of a[]
+    int i, j, k;
+    k = 0;
+    i = p;
+    j = q + 1;
+    while(i &lt;= q &amp;&amp; j &lt;= r)
+    {
+        if(a[i] &lt; a[j])
+        {
+            b[k++] = a[i++];    // same as b[k]=a[i]; k++; i++;
+        }
+        else
+        {
+            b[k++] = a[j++];
+        }
+    }
+  
+    while(i &lt;= q)
+    {
+        b[k++] = a[i++];
+    }
+  
+    while(j &lt;= r)
+    {
+        b[k++] = a[j++];
+    }
+  
+    for(i=r; i &gt;= p; i--)
+    {
+        a[i] = b[--k];  // copying back the sorted list to a[]
+    } 
+}
+
+// function to print the array
+void printArray(int a[], int size)
+{
+    int i;
+    for (i=0; i &lt; size; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+}
+ 
+int main()
+{
+    int arr[] = {32, 45, 67, 2, 7};
+    int len = sizeof(arr)/sizeof(arr[0]);
+ 
+    printf("Given array: \n");
+    printArray(arr, len);
+    
+    // calling merge sort
+    mergeSort(arr, 0, len - 1);
+ 
+    printf("\nSorted array: \n");
+    printArray(arr, len);
+    return 0;
+}
+</code>
+  </pre>
+</div>
+<h3>Output</h3>
+<div>
+<pre><code>
+Given array:
+32 45 67 2 7
+Sorted array:
+2 7 32 45 67
+</code></pre>
+</div>
+<h3>Complexity Analysis</h3>
+<p>Merge Sort is quite fast, and has a time complexity of&nbsp;<strong>O(n*log n)</strong>. It is also a stable sort, which means the "equal" elements are ordered in the same order in the sorted list.</p>
+
+<ul>
+<li>Time complexity of Merge Sort is O(n*Log n) in all the 3 cases (worst, average and best) as merge sort always divides the array in two halves and takes linear time to merge two halves.</li>
+<li>It requires&nbsp;<strong>equal amount of additional space</strong>&nbsp;as the unsorted array. Hence its not at all recommended for searching large unsorted arrays.</li>
+<li>It is the best Sorting technique used for sorting&nbsp;<strong>Linked Lists</strong>.</li>
+</ul>
+</body>
+</html>

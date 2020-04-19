@@ -1,0 +1,70 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<style>
+body {
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 3px solid #f36d33;
+}
+p {
+    text-align:justify;
+   
+}
+li {
+	text-align:justify;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	background-color: #f4f4f4;	 
+	border-radius: 10px;
+	padding: 10px;
+
+}
+h1 {
+	border-bottom:3px solid #808080;
+	padding-bottom: 10px;
+
+}
+code{
+display:block;
+overflow-x:scroll;
+}
+
+
+</style>
+<h1>Heap</h1>
+<p>A Heap is a special Tree-based data structure in which the tree is a complete binary tree. Generally, Heaps can be of two types:</p>
+<ol>
+<li>Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it&rsquo;s children. The same property must be recursively true for all sub-trees in that Binary Tree.</li>
+<li><strong>Min-Heap</strong>: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it&rsquo;s children. The same property must be recursively true for all sub-trees in that Binary Tree.</li>
+</ol>
+<h3>Max Heap Construction Algorithm</h3>
+<p>We are going to derive an algorithm for max heap by inserting one element at a time. At any point of time, heap must maintain its property. While insertion, we also assume that we are inserting a node in an already heapified tree.</p>
+<div>
+<pre><code>
+  Step 1 &minus; Create a new node at the end of heap.
+Step 2 &minus; Assign new value to the node.
+Step 3 &minus; Compare the value of this child node with its parent.
+Step 4 &minus; If value of parent is less than child, then swap them.
+Step 5 &minus; Repeat step 3 &amp; 4 until Heap property holds.
+</code></pre>
+</div>
+<h3>Max Heap Deletion Algorithm</h3>
+<p>Let us derive an algorithm to delete from max heap. Deletion in Max (or Min) Heap always happens at the root to remove the Maximum (or minimum) value.</p>
+<div>
+<pre><code>
+Step 1 − Remove root node.
+Step 2 − Move the last element of last level to root.
+Step 3 − Compare the value of this child node with its parent.
+Step 4 − If value of parent is less than child, then swap them.
+Step 5 − Repeat step 3 & 4 until Heap property holds.
+</code></pre>
+</div>
+</body>
+</html>

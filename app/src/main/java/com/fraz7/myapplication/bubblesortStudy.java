@@ -22,15 +22,14 @@ public class bubblesortStudy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_bubblesort_study);
+        setContentView(R.layout.activity_stdy);
         webview = findViewById(R.id.webview);
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle("Bubble Sort");// toolbar layout file
+        myToolbar2.setTitle(R.string.bubble_sort);// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#488bd8"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
-
         String url = "file:///android_asset/bubblesort.html";
         webview.loadUrl(url);
         webview.setOnLongClickListener(new View.OnLongClickListener() {
@@ -43,6 +42,7 @@ public class bubblesortStudy extends AppCompatActivity {
         WebSettings webSettings = webview.getSettings();
         webSettings.setBuiltInZoomControls(false);
       //  webSettings.setJavaScriptEnabled(true);
+
 
 
     }
