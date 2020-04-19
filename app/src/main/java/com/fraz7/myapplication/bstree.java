@@ -34,23 +34,41 @@ public class bstree extends AppCompatActivity {
     // image resource
 
     List<BSortResource> resourceList = new ArrayList<BSortResource>() {{
-        add(new BSortResource(R.drawable.hp_1, R.string.busort1));
-        add(new BSortResource(R.drawable.hp_2, R.string.busort2));
-        add(new BSortResource(R.drawable.hp_3, R.string.busort3));
-        add(new BSortResource(R.drawable.hp_4, R.string.busort4));
-        add(new BSortResource(R.drawable.hp_5, R.string.busort5));
-        add(new BSortResource(R.drawable.hp_6, R.string.busort6));
-        add(new BSortResource(R.drawable.hp_7, R.string.busort7));
-        add(new BSortResource(R.drawable.hp_8, R.string.busort8));
-        add(new BSortResource(R.drawable.hp_9, R.string.busort9));
-        add(new BSortResource(R.drawable.hp_10, R.string.busort10));
-        add(new BSortResource(R.drawable.hp_11, R.string.busort10));
-        add(new BSortResource(R.drawable.hp_12, R.string.busort10));
-        add(new BSortResource(R.drawable.hp_13, R.string.busort10));
-        add(new BSortResource(R.drawable.hp_14, R.string.busort10));
-        add(new BSortResource(R.drawable.hp_15, R.string.busort10));
-
-
+        add(new BSortResource(R.drawable.bst_1, R.string.bst1));
+        add(new BSortResource(R.drawable.bst_1, R.string.bst2));
+        add(new BSortResource(R.drawable.bst_1, R.string.bst3));
+        add(new BSortResource(R.drawable.bst_1, R.string.bst4));
+        add(new BSortResource(R.drawable.bst_2, R.string.bst5));
+        add(new BSortResource(R.drawable.bst_3, R.string.bst6));
+        add(new BSortResource(R.drawable.bst_3, R.string.bst7));
+        add(new BSortResource(R.drawable.bst_4, R.string.bst8));
+        add(new BSortResource(R.drawable.bst_4, R.string.bst9));
+        add(new BSortResource(R.drawable.bst_6, R.string.bst10));
+        add(new BSortResource(R.drawable.bst_6, R.string.bst11));
+        add(new BSortResource(R.drawable.bst_7, R.string.bst12));
+        add(new BSortResource(R.drawable.bst_8, R.string.bst13));
+        add(new BSortResource(R.drawable.bst_9, R.string.bst14));
+        add(new BSortResource(R.drawable.bst_10, R.string.bst15));
+        add(new BSortResource(R.drawable.bst_11, R.string.bst16));
+        add(new BSortResource(R.drawable.bst_11, R.string.bst17));
+        add(new BSortResource(R.drawable.bst_12, R.string.bst18));
+        add(new BSortResource(R.drawable.bst_13, R.string.bst19));
+        add(new BSortResource(R.drawable.bst_14, R.string.bst20));
+        add(new BSortResource(R.drawable.bst_14, R.string.bst21));
+        add(new BSortResource(R.drawable.bst_15, R.string.bst22));
+        add(new BSortResource(R.drawable.bst_16, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_17, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_18, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_19, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_20, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_21, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_22, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_23, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_24, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_25, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_26, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_27, R.string.busort3));
+        add(new BSortResource(R.drawable.bst_28, R.string.busort3));
 
     }};
 

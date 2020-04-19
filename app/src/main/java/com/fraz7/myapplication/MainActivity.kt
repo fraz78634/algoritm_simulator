@@ -2,28 +2,24 @@ package com.fraz7.myapplication
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.getColor
-import android.view.*
+import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.BaseAdapter
-import android.widget.ListView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.animal_tickt.view.*
-import kotlinx.android.synthetic.main.animal_tickt.view.nameView
-import kotlinx.android.synthetic.main.header_tickt.view.*
-import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
 
 
     var listOfAnimals = ArrayList<Animal>()
     var adapter:AnimalsAdapter?=null
+    var myToolbar2: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.tool_bar))
         val actionBar = supportActionBar
+
 
 
         adapter = AnimalsAdapter(this, listOfAnimals)

@@ -66,7 +66,7 @@ public class heap extends AppCompatActivity {
         // tool bar
         myToolbar2 = findViewById(R.id.tool_bar);            // toolbar
         myToolbar2.setNavigationIcon(R.drawable.backarrow);
-        myToolbar2.setTitle(R.string.bubble_sort);// toolbar layout file
+        myToolbar2.setTitle(R.string.heap);// toolbar layout file
         myToolbar2.setBackgroundColor(Color.parseColor("#1ac260"));
         setSupportActionBar(myToolbar2);                  // support toolbar as actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // home button (arrow) set
