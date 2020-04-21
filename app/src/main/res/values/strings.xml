@@ -225,8 +225,8 @@
     <string name="bst2">The numbered points are called nodes.</string>
     <string name="bst3">Binary search trees have two properties.</string>
     <string name="bst4">Their first property is that all nodes are greater than the nodes in their left subtree.</string>
-    <string name="bst5">For example, node 3 is greater than the other number in its left subbste.</string>
-    <string name="bst6">Likewise, node 8 is greater than the other numbers in its left subbste.</string>
+    <string name="bst5">For example, node 3 is greater than the other number in its left subtree.</string>
+    <string name="bst6">Likewise, node 8 is greater than the other numbers in its left subtree.</string>
     <string name="bst7">On the contrary, their second property is that all nodes are smaller than the nodes in their right subbste.</string>
     <string name="bst8">For example, node 8 is smaller than the other numbers in its right subtree.</string>
     <string name="bst9">Because of these two properties, this tree holds true.</string>
@@ -237,7 +237,7 @@
     <string name="bst14">2 is less than 3, so it proceeds to left.</string>
     <string name="bst15">2 is greater than 1, so it proceeds to right, but since there isn\'t node to move to, the 2 is added as a new node.</string>
     <string name="bst16">The addition of the 2 is now completed.</string>
-    <string name="bst17">Now let\'s look at the process for deleting nodes from binary search bste.</string>
+    <string name="bst17">Now let\'s look at the process for deleting nodes from binary search tree.</string>
     <string name="bst18">Let\'s try deleting the 13.</string>
     <string name="bst19">When the node has no children, the target node is simply deleted and the process is completed.</string>
     <string name="bst20">Let\'s try deleting the 6.</string>
@@ -246,18 +246,18 @@
     <string name="bst23">and from the deleted node\'s children 7 is largest move it to the deleted node\'s location.</string>
     <string name="bst24">Let\'s try deleting the 6.</string>
     <string name="bst25">When deleting a node that has two children first we delete the target node.</string>
-    <string name="bst26">and from the deleted node\'s left subbste we find the largest node..</string>
+    <string name="bst26">and from the deleted node\'s left subtree we find the largest node..</string>
     <string name="bst27">and move it to the deleted node\'s location.</string>
-    <string name="bst28">By doing this, we were able to delete a node while preserving the integrity of the binary search bste.</string>
+    <string name="bst28">By doing this, we were able to delete a node while preserving the integrity of the binary search tree.</string>
     <string name="bst29">Furthermore, if the node that was removed also had its own child nodes, the same process is repeated recursively.</string>
-    <string name="bst30">Also, while we used the largest node from the left subbtree this time, using the smallest node from the right subbste works as well.</string>
+    <string name="bst30">Also, while we used the largest node from the left subtree this time, using the smallest node from the right subtree works as well.</string>
     <string name="bst31">As an example, let\'s try searching for the 14.</string>
-    <string name="bst32">We start our search at the topmost node the binary search bste.</string>
+    <string name="bst32">We start our search at the topmost node the binary search tree.</string>
     <string name="bst33">14 is greater than 8, so we proceed to the right.</string>
     <string name="bst34">14 is greater than 10, so we proceed to the right.</string>
     <string name="bst35">We found the 14.</string>
-    <string name="bst36">As you can see, we are able to search efficiently using binary search bste.</string>
-    <string name="bst37">However, if the bste gets close to forming a straight line, its search efficiency becomes exbstmely poor, like a linear search.</string>
-    <string name="bst38">On the other hand, binary search bste that are always well-balanced, called self-balancing\10        binary search bste, are able to maintain search efficiency.</string>
-    <string name="bst39">This concludes the explanation of binary search bstes.</string>
+    <string name="bst36">As you can see, we are able to search efficiently using binary search tree.</string>
+    <string name="bst37">However, if the tree gets close to forming a straight line, its search efficiency becomes extremely poor, like a linear search.</string>
+    <string name="bst38">On the other hand, binary search tree that are always well-balanced, called self-balancing binary search tree, are able to maintain search efficiency.</string>
+    <string name="bst39">This concludes the explanation of binary search tree.</string>
 </resources>
